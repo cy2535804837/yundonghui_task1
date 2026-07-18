@@ -1,0 +1,28 @@
+# CLI parameters for waist_height_adjust.main. Keys are argparse dests (the long
+# flag with leading -- removed and dashes turned into underscores).
+# Edit values here instead of typing them on the command line.
+# Explicit command-line flags still override these values.
+# Regenerate with:  python3 -m waist_height_adjust.main --write-config
+
+# Target waist height (m) = body endpose z. Factory zero pose is 0.68 m.
+height: 0.68
+
+# Safety clamp on the target height (m). The commanded height is clamped into
+# [min_height, max_height] with a warning. Widen once the true mechanical range
+# is confirmed on hardware.
+min_height: 0.45
+max_height: 0.90
+
+# Other body-endpose DOFs, held at the factory zero-pose values by default.
+body_x: 0.05
+body_pitch: 0.0
+body_yaw: 0.0
+
+# Enable leg + waist hardware before commanding (needed on real hardware).
+enable_hardware: true
+
+# Wait (s) after the move before reading back body joint angles.
+settle_sec: 1.0
+
+dry_run: false
+json_out: /tmp/waist_height.json

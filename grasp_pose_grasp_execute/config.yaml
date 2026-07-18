@@ -1,0 +1,186 @@
+# CLI parameters for this module. Keys are argparse dests (the long
+# flag with leading -- removed and dashes turned into underscores).
+# Edit values here instead of typing them on the command line.
+# Explicit command-line flags still override these values.
+# Regenerate with:  python3 -m <module>.main --write-config
+
+acc_scale: 0.8
+activate_grippers_on_start: true
+adaptive_grasp_orientation: true
+approach_along_axis: true
+approach_dist: 0.12
+approach_dx: -0.1
+approach_dy: 0.0
+approach_dz: 0.0
+arm: auto
+arm_select_boundary_y: 0.0
+arm_select_deadband_m: 0.0
+arm_select_default: right
+base_url: http://10.20.0.24:939
+cam_timeout: 5.0
+camera_yaml: poseestimator/camera_pose_config_dev29.yaml
+close_gripper: true
+continuous_grasp_max_yaw_deg: 15.0
+continuous_grasp_orientation: true
+continuous_grasp_yaw_gain: 1.0
+depth_topic: /ob_camera_head/depth/image_raw
+detected_pose_json: ''
+dry_run: false
+grasp_hold_orientation: true
+grasp_quat: null
+grasp_reach_retry: true
+grasp_reach_timeout_sec: 3.0
+grasp_reach_tol_m: 0.012
+grasp_retry_yaw_scale: 0.5
+grasp_tilt_y_deg: 45.0
+grasp_x_offset: 0.00
+grasp_y_offset: 0.0 #0.025
+grasp_yaw_offset_deg: 0.0
+grasp_z_offset: 0.017
+gripper_activate_on_connect: true
+gripper_async_connect: true
+gripper_backend: modbus_rtu
+gripper_close_delay_sec: 0.3
+gripper_close_pct: 100.0
+gripper_force_activate: false
+gripper_force_pct: 50.0
+gripper_open_pct: 0.0
+gripper_port_cache: /tmp/robotiq_gripper_port.txt
+gripper_recv_timeout_ms: 500
+gripper_serial_port: auto
+gripper_server_get_port: 4245
+gripper_server_ip: 127.0.0.1
+gripper_server_set_port: 4244
+gripper_settle_s: 0.5
+gripper_slave_id: 9
+gripper_speed_pct: 100.0
+gripper_wait_timeout_s: 8.0
+handoff_out: /tmp/grasp_handoff.json
+head_frame: head_roll_link
+# home_left_joints:
+# - 0.7324762344360352
+# - 0.6585812568664551
+# - 0.24663496017456055
+# - -2.487205982208252
+# - -0.898409366607666
+# - -0.43663787841796875
+# - 0.22499990463256836
+# home_right_joints:
+# - 0.7324762344360352
+# - -0.6585812568664551
+# - -0.24663496017456055
+# - -2.487205982208252
+# - 0.898409366607666
+# - -0.43663787841796875
+# - -0.22499990463256836
+home_left_joints:
+- 0.844
+- 0.026
+- -0.006
+- -2.216
+- -1.529
+- 0.039
+- 0.683
+home_right_joints:
+- 0.844
+- -0.026
+- 0.006
+- -2.216
+- 1.529
+- 0.039
+- -0.683
+json_out: /tmp/grasp_exec.json
+lift_tilt_y_deg: -15.0
+lift_z: 0.12
+max_grasp_yaw_delta_deg: 30.0
+mode: segment
+motion_strategy: qp_all
+moveit_timeout_sec: 120.0
+open_gripper_before_grasp: true
+orientation_policy: current
+parallel_detect_threshold_deg: 45.0
+parallel_extra_yaw_deg: 15.0
+pipeline_version: accelerated
+# pre_home_left_joints:
+# - 2.4318695068359375e-05
+# - 0.6644778251647949
+# - 0.09999608993530273
+# - -2.258571147918701
+# - -0.3064851760864258
+# - -0.6528887748718262
+# - -0.37276792526245117
+# pre_home_right_joints:
+# - 2.4318695068359375e-05
+# - -0.6644778251647949
+# - -0.09999608993530273
+# - -2.258571147918701
+# - 0.3064851760864258
+# - -0.6528887748718262
+# - 0.37276792526245117
+pre_home_left_joints:
+- 0.844
+- 0.026
+- -0.006
+- -2.216
+- -1.529
+- 0.039
+- 0.683
+pre_home_right_joints:
+- 0.844
+- -0.026
+- 0.006
+- -2.216
+- 1.529
+- 0.039
+- -0.683
+prompt:
+- remote-control
+qp_grasp_lookahead_m: 0.03
+qp_grasp_pos_tol_m: 0.01
+qp_lag_guard_m: 0.04
+qp_lookahead_m: 0.08
+qp_otg_p_step: 0.0015
+qp_otg_r_step: 0.001
+qp_speed_scale: 0.7
+qp_stall_timeout_s: 2.0
+qp_stream_duration: 1.5
+qp_stream_hold_sec: 0.4
+qp_stream_rate_hz: 100.0
+qp_transit_hold_sec: 0.1
+qp_transit_lookahead_m: 0.13
+qp_transit_p_step: 0.014
+qp_transit_pos_tol_m: 0.02
+qp_transit_r_step: 0.03
+qp_transit_raise_z: 0.0
+release_on_finish: false
+retract_extra_z: 0.05
+retract_to_approach: true
+retract_toward_body: true
+retract_toward_body_m: 0.18
+retract_toward_body_y_m: 0.1
+return_home: true
+rgb_topic: /ob_camera_head/color/image_raw
+save_dir: ''
+save_prefix: grasp_exec
+segment_confidence: 0.3
+skip_approach: false
+skip_lift: false
+start_home: true
+stream_closed_loop: true
+stream_step_m: 0.005
+stream_waypoint_timeout_s: 0.6
+stream_waypoint_tol_m: 0.004
+tcp_to_tip_x: 0.0
+tcp_to_tip_y: 0.0
+tcp_to_tip_z: -0.266
+tf_retries: 4
+tf_timeout: 2.0
+tf_warmup_sec: 0.6
+use_cartesian_approach: false
+use_cartesian_grasp: false
+use_cartesian_lift: false
+use_fixed_grasp_quat: true
+use_pour_place_offsets: false
+use_pre_home_joints: true
+vel_scale: 0.8
+waist_frame: waist_yaw_link

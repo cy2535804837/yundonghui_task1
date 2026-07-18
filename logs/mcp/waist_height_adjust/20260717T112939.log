@@ -1,0 +1,48 @@
+[mcp] launched at 2026-07-17T11:29:39
+[mcp] cmd: /usr/bin/python3 -u -m waist_height_adjust.main --height 0.58 --json-out /home/ubuntu/cheng/logs/mcp/waist_height_adjust/20260717T112939.result.json
+[mcp] cwd: /home/ubuntu/cheng
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 10 params from /home/ubuntu/cheng/waist_height_adjust/config.yaml
+[WAIST-HEIGHT] target body endpose [x, z(height), pitch, yaw] = [0.0500, 0.5800, 0.0000, 0.0000]
+[INFO] [1784258980.352526070] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1784258982.671082400] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1784258982.680119549] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1784258982.687817202] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1784258987.142247308] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+[WAIST-HEIGHT] enabling leg + waist hardware
+[WAIST-HEIGHT] body joints before: [0.10577277094125748, -0.20779448747634888, 0.10310028493404388, -0.0023009711876511574]
+[WAIST-HEIGHT] commanding body endpose (this blocks until the move completes)...
+[INFO] [1784258987.169347432] [XARM_manager]: Activated controllers: ['endpose_body_controller']
+[INFO] [1784258987.185782954] [XARM_manager]: Sending goal to action server /endpose_body_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.05, 0.58, 0.0, 0.0])
+[INFO] [1784258987.189153113] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1784258988.106425513] [XARM_manager]: Action result received from /endpose_body_controller/jointspace
+[INFO] [1784258988.106785705] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[WAIST-HEIGHT] body joints after: [-0.22203172743320465, 0.4554244875907898, -0.23339277505874634, -9.58738019107841e-05]
+{
+  "requested_height": 0.58,
+  "commanded_height": 0.58,
+  "target_body_pose": [
+    0.05,
+    0.58,
+    0.0,
+    0.0
+  ],
+  "dry_run": false,
+  "ok": true,
+  "body_joints_before": [
+    0.105773,
+    -0.207794,
+    0.1031,
+    -0.002301
+  ],
+  "move_result": "eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')",
+  "body_joints_after": [
+    -0.222032,
+    0.455424,
+    -0.233393,
+    -9.6e-05
+  ],
+  "error_codes": []
+}
+[WAIST-HEIGHT] saved result json: /home/ubuntu/cheng/logs/mcp/waist_height_adjust/20260717T112939.result.json

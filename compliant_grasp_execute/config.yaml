@@ -1,0 +1,321 @@
+# CLI parameters for this module. Keys are argparse dests (the long
+# flag with leading -- removed and dashes turned into underscores).
+# Edit values here instead of typing them on the command line.
+# Explicit command-line flags still override these values.
+# Regenerate with:  python3 -m <module>.main --write-config
+
+acc_scale: 0.2 #0.8
+activate_grippers_on_start: true
+adaptive_grasp_orientation: true
+approach_along_axis: false
+approach_clamp_lateral: true
+approach_dist: 0.12
+approach_dx: 0.0
+approach_dy: 0.0
+approach_dz: 0.12
+arm: auto
+arm_select_boundary_y: 0.20
+arm_select_deadband_m: 0.0
+arm_select_default: right
+arm_select_long_axis_yaw_threshold_deg: 15.0
+base_url: http://10.20.0.24:939
+cam_timeout: 5.0
+camera_yaml: poseestimator/camera_pose_config_dev29.yaml
+capture_elbow_high_seed: false
+close_gripper: true
+compliant_contact_debounce: 1
+compliant_contact_force_n: 1.5
+compliant_control_rate_hz: 100.0
+compliant_damping: 3.0
+compliant_damping_ratio: 1.4
+compliant_filter_alpha: 0.35
+compliant_final_descent_m: 0.03
+compliant_force_deadzone: 0.8
+compliant_grasp: true
+compliant_hold_stiffness: 150.0
+compliant_insert_speed_mps: 0.01 #0.05
+compliant_insertion_stiffness: 10.0
+compliant_lateral_stiffness: 20.0
+compliant_loop_period: 0.004
+compliant_mass: 0.1
+compliant_max_insert_m: 0.2
+compliant_max_lag_m: 0.045
+compliant_max_omega: 0.5
+compliant_max_vel: 0.08 #0.2
+compliant_min_insert_m: 0.008
+compliant_otg_p_step: 0.016
+compliant_otg_r_step: 0.005
+compliant_overshoot_m: 0.03
+compliant_soften_threshold: 0.3
+compliant_stall_eps_m: 0.00035
+compliant_stall_window_s: 0.7
+compliant_torque_deadzone: 0.08
+compliant_trans_lead_time: 0.08
+continuous_grasp_max_yaw_deg: 15.0
+continuous_grasp_orientation: true
+continuous_grasp_yaw_gain: 1.0
+depth_topic: /ob_camera_head/depth/image_raw
+detected_pose_json: ''
+diagonal_schedule: true
+diagonal_schedule_angle_end_deg: 60.0
+diagonal_schedule_angle_start_deg: 15.0
+diagonal_schedule_tilt_scale_end: 0.5
+diagonal_schedule_yaw_clamp_end_deg: 45.0
+dry_run: false
+elbow_high_align_jaws: true
+elbow_high_align_wrist_margin_rad: 0.10
+elbow_high_always: false
+elbow_high_jaw_flip_retry: false
+elbow_high_roll_align_waist_x: true
+elbow_high_diagonal_use_waist_x: true
+elbow_high_jaw_axis_heading_deg: 0.0
+elbow_high_yaw_backoff: false
+elbow_high_yaw_backoff_scales:
+- 0.7
+- 0.45
+- 0.25
+# elbow_high_arms: left,right
+elbow_high_arms: ""
+elbow_high_clamp_margin_rad: 0.05
+elbow_high_deadband_deg: 45.0
+elbow_high_enable_fallback: true
+elbow_high_guard_margin_rad: 0.01
+elbow_high_orientation: seed
+elbow_high_proactive: true
+elbow_high_proactive_angle_min_deg: 60.0
+elbow_high_qp_lock: true
+elbow_high_qp_lock_drop_margin_rad: 0.15
+elbow_high_qp_lock_joints: shoulder_pitch,shoulder_roll,shoulder_yaw,elbow_pitch,elbow_yaw
+elbow_high_qp_lock_margin_rad: 0.4
+elbow_high_ready_left_joints:
+- -2.905
+- -0.011
+- -2.9641
+- -2.44
+- 0.0914
+- -0.1536
+- 0.0063
+elbow_high_ready_right_joints:
+- -2.905
+- 0.011
+- 2.9641
+- -2.44
+- -0.0914
+- -0.1536
+- -0.0063
+elbow_high_seed_retry_tilt_up_deg: 25.0
+elbow_high_seed_tilt_up_deg: 12.0
+elbow_high_seed_yaw_max_deg: 90.0
+elbow_high_topdown: true
+elbow_high_topdown_max_yaw_deg: 90.0
+elbow_high_topdown_retry_tilt_deg: 55.0
+elbow_high_topdown_tilt_deg: 90.0
+elbow_high_stage_left_joints:
+- 0.0
+- 1.18
+- 0.0
+- -1.3
+- 1.4
+- -0.13
+- 0.18
+elbow_high_stage_right_joints:
+- 0.0
+- -1.18
+- 0.0
+- -1.3
+- -1.4
+- -0.13
+- 0.18
+elbow_high_transition_left_joints: []
+elbow_high_transition_right_joints: []
+elbow_low_reorient: false
+elbow_low_reorient_max_deg: 20.0
+elbow_low_reorient_trigger_abs_y_m: 0.24
+ft_calib_left: ''
+ft_calib_right: ''
+ft_topic_left: /arm_6dof_left
+ft_topic_right: /arm_6dof_right
+grasp_hold_orientation: true
+grasp_orient_miss_tol_m: 0.03
+grasp_quat: null
+grasp_reach_retry: true
+grasp_reach_timeout_sec: 3.0
+grasp_reach_tol_m: 0.012
+grasp_retry_yaw_scale: 0.5
+grasp_tilt_y_deg: 45.0
+grasp_offset_frame: waist
+grasp_x_offset: 0.00
+grasp_y_offset: 0.0 #-0.01
+grasp_yaw_offset_deg: 0.0
+grasp_z_offset: -0.005 #0.005 #0.01
+gripper_activate_on_connect: true
+gripper_async_connect: true
+gripper_backend: modbus_rtu
+gripper_close_delay_sec: 0.15
+gripper_close_pct: 100.0
+gripper_force_activate: false
+gripper_force_pct: 50.0
+gripper_open_pct: 0.0
+gripper_port_cache: /tmp/robotiq_gripper_port.txt
+gripper_recv_timeout_ms: 500
+gripper_serial_port: auto
+gripper_server_get_port: 4245
+gripper_server_ip: 127.0.0.1
+gripper_server_set_port: 4244
+gripper_settle_s: 0.3
+gripper_slave_id: 9
+gripper_speed_pct: 30.0 #100.0
+gripper_wait_timeout_s: 8.0
+handoff_out: /tmp/grasp_handoff.json
+head_frame: head_roll_link
+home_left_joints:
+- 1.668
+- 0.186
+- 0.069
+- -2.201
+- -1.527
+- -0.016 #0.039
+- 0.742
+# home_right_joints:
+# - 1.668
+# - -0.186
+# - -0.069
+# - -2.201
+# - 1.527
+# - -0.016 #0.039
+# - -0.742
+home_right_joints:
+- 1.389
+- -0.680
+- -0.109
+- -2.020
+- 1.168
+- 0.070 #0.039
+- -0.779
+pre_cycle_left_joints:
+- 0.844
+- 0.026
+- -0.006
+- -2.216
+- -1.529
+- 0.300
+- 0.683
+pre_cycle_right_joints:
+- 0.844
+- -0.026
+- 0.006
+- -2.216
+- 1.529
+- 0.300
+- -0.683
+joint_limit_allow_recovery: true
+joint_limit_guard: true
+joint_limit_margin_rad: 0.05
+joint_limit_recovery_grace_iters: 12
+joint_limit_reduce_tilt_on_retry: true
+json_out: /tmp/grasp_exec.json
+lift_tilt_y_deg: -15.0
+lift_z: 0.12
+max_grasp_yaw_delta_deg: 30.0
+mode: segment
+motion_strategy: qp_all
+moveit_timeout_sec: 120.0
+open_gripper_before_grasp: true
+orientation_policy: current
+parallel_detect_threshold_deg: 45.0
+parallel_extra_yaw_deg: 15.0
+pipeline_version: accelerated
+pre_cycle_move: false
+pre_home_left_joints:
+- 0.0
+- 1.18
+- 0.0
+- -1.3
+- 1.4
+- -0.13
+- 0.18
+pre_home_right_joints:
+- 0.0
+- -1.18
+- 0.0
+- -1.3
+- -1.4
+- -0.13
+- 0.18
+# Dedicated post-lift waypoint for the standard elbow-low IK path. Keep this
+# separate from pre_home_*_joints, which is reserved for elbow-high.
+use_elbow_low_pre_home_joints: true
+elbow_low_pre_home_left_joints:
+- 0.258
+- 0.673
+- -0.156
+- -2.056
+- -1.152
+- -0.043
+- 0.320
+elbow_low_pre_home_right_joints:
+- 0.258
+- -0.673
+- 0.156
+- -2.056
+- 1.152
+- -0.043
+- -0.320
+prompt:
+- remote-control
+# - kiwi-fruit
+# - apple
+qp_grasp_lookahead_m: 0.03
+qp_grasp_pos_tol_m: 0.01
+qp_lag_guard_m: 0.04
+qp_lookahead_m: 0.08
+qp_otg_p_step: 0.0005 #0.0015
+qp_otg_r_step: 0.0003 #0.001
+qp_speed_scale: 0.2
+qp_stall_timeout_s: 2.0
+qp_stream_duration: 1.5
+qp_stream_hold_sec: 0.4
+qp_stream_rate_hz: 50.0 #100.0
+qp_transit_hold_sec: 0.1
+qp_transit_lookahead_m: 0.13
+qp_transit_p_step: 0.002 #0.014
+qp_transit_pos_tol_m: 0.02
+qp_transit_r_step: 0.008 #0.03
+qp_transit_raise_z: 0.0
+reach_tilt_reduce: true
+reach_tilt_start_abs_y_m: 0.18
+reach_tilt_end_abs_y_m: 0.28
+reach_tilt_scale_end: 0.7
+release_on_finish: false
+retract_extra_z: 0.05
+retract_to_approach: true
+retract_toward_body: true
+retract_toward_body_m: 0.18
+retract_toward_body_y_m: 0.1
+return_home: true
+rgb_topic: /ob_camera_head/color/image_raw
+save_dir: ''
+save_prefix: grasp_exec
+segment_confidence: 0.3
+skip_approach: false
+skip_lift: false
+start_home: true
+stream_closed_loop: true
+stream_step_m: 0.005
+stream_waypoint_timeout_s: 0.6
+stream_waypoint_tol_m: 0.004
+table_clear_rotate_deg: -20.0
+tcp_to_tip_x: 0.0
+tcp_to_tip_y: 0.0
+tcp_to_tip_z: -0.18 #-0.266
+tf_retries: 4
+tf_timeout: 2.0
+tf_warmup_sec: 0.6
+use_cartesian_approach: false
+use_cartesian_grasp: false
+use_cartesian_lift: false
+use_fixed_grasp_quat: true
+use_pour_place_offsets: false
+use_pre_home_joints: true
+vel_scale: 0.2 #0.8
+waist_frame: waist_yaw_link

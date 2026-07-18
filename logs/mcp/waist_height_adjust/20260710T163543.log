@@ -1,0 +1,63 @@
+[mcp] launched at 2026-07-10T16:35:43
+[mcp] cmd: /usr/bin/python3 -u -m waist_height_adjust.main --height 0.5579829344616191 --json-out /home/ubuntu/niu/logs/mcp/waist_height_adjust/20260710T163543.result.json
+[mcp] cwd: /home/ubuntu/niu
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 10 params from /home/ubuntu/niu/waist_height_adjust/config.yaml
+[WAIST-HEIGHT] target body endpose [x, z(height), pitch, yaw] = [0.0500, 0.5580, 0.0000, 0.0000]
+[INFO] [1783672543.631962425] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1783672544.533793096] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1783672544.538944517] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1783672544.545685129] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1783672548.079174045] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+[WAIST-HEIGHT] enabling leg + waist hardware
+[WAIST-HEIGHT] body joints before: [0.5022708773612976, -1.000407099723816, 0.4981602728366852, -4.793690095539205e-05]
+[WAIST-HEIGHT] commanding body endpose (this blocks until the move completes)...
+[INFO] [1783672548.104513416] [XARM_manager]: Activated controllers: ['endpose_body_controller']
+[INFO] [1783672548.621490650] [XARM_manager]: Sending goal to action server /endpose_body_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.05, 0.5579829344616191, 0.0, 0.0])
+收到错误信息: source=EndposeBodyController_body, code=600101, info=指令超上限位, joint 1 = 0.550471
+[WARN] [1783672548.670124574] [XARM_manager]: Goal was not accepted by action server /endpose_body_controller/jointspace (try 1).
+[INFO] [1783672548.670771839] [XARM_manager]: Sending goal to action server /endpose_body_controller/jointspace (attempt 2/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.05, 0.5579829344616191, 0.0, 0.0])
+收到错误信息: source=EndposeBodyController_body, code=600101, info=指令超上限位, joint 1 = 0.550471
+[WARN] [1783672548.676633162] [XARM_manager]: Goal was not accepted by action server /endpose_body_controller/jointspace (try 2).
+[INFO] [1783672548.677250200] [XARM_manager]: Sending goal to action server /endpose_body_controller/jointspace (attempt 3/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.05, 0.5579829344616191, 0.0, 0.0])
+收到错误信息: source=EndposeBodyController_body, code=600101, info=指令超上限位, joint 1 = 0.550471
+[WARN] [1783672548.684423822] [XARM_manager]: Goal was not accepted by action server /endpose_body_controller/jointspace (try 3).
+[ERROR] [1783672548.684996943] [XARM_manager]: Could not get action result from /endpose_body_controller/jointspace after 3 attempts.
+[WAIST-HEIGHT] body joints after: [0.5020431280136108, -1.0000475645065308, 0.4980763792991638, -7.190534961409867e-05]
+[WAIST-HEIGHT] FAILED: the body controller REJECTED the goal (the arm did not move). This height (0.558 m) is almost certainly OUTSIDE the reachable range: the commanded z maps to a leg-pitch joint past its limit (error 600101 '指令超上限位' = command over the UPPER joint limit -> the waist is being asked to go LOWER than it mechanically can). Try a height closer to the ~0.68 m nominal (e.g. raise it in 1-2 cm steps to find the floor).
+{
+  "requested_height": 0.557983,
+  "commanded_height": 0.557983,
+  "target_body_pose": [
+    0.05,
+    0.557983,
+    0.0,
+    0.0
+  ],
+  "dry_run": false,
+  "ok": false,
+  "body_joints_before": [
+    0.502271,
+    -1.000407,
+    0.49816,
+    -4.8e-05
+  ],
+  "move_result": "None",
+  "body_joints_after": [
+    0.502043,
+    -1.000048,
+    0.498076,
+    -7.2e-05
+  ],
+  "error_codes": [
+    600101,
+    600101,
+    600101
+  ],
+  "hint": "the body controller REJECTED the goal (the arm did not move). This height (0.558 m) is almost certainly OUTSIDE the reachable range: the commanded z maps to a leg-pitch joint past its limit (error 600101 '指令超上限位' = command over the UPPER joint limit -> the waist is being asked to go LOWER than it mechanically can). Try a height closer to the ~0.68 m nominal (e.g. raise it in 1-2 cm steps to find the floor).",
+  "moved": false
+}
+[WAIST-HEIGHT] saved result json: /home/ubuntu/niu/logs/mcp/waist_height_adjust/20260710T163543.result.json

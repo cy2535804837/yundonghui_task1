@@ -1,0 +1,11 @@
+[mcp] launched at 2026-07-15T21:30:24
+[mcp] cmd: /usr/bin/python3 -u -m world_place_execute.main --target-url  --target-x 1.990523206 --target-y 0.213692430 --target-z 0.590000000 --target-frame map --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/cheng/logs/mcp/place_execute/20260715T213024.result.json --timeout-sec 600.000 --use-live-waist-tf
+[mcp] cwd: /home/ubuntu/cheng
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 31 params from /home/ubuntu/cheng/world_place_execute/config.yaml
+[INFO] [1784122225.415815262] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1784122228.427587829] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1784122228.435195633] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1784122228.440968663] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[WORLD-PLACE] converted target -> waist place x=0.4120 y=-0.1674 z=-0.0788
+[WORLD-PLACE] launching place node: /usr/bin/python3 -u -m grasp_pose_place_execute.main --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/cheng/logs/mcp/place_execute/20260715T213024.result.place.json --place-x 0.412031 --place-y -0.167375 --place-z -0.078817

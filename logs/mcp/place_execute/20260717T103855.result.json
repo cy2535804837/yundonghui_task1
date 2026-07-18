@@ -1,0 +1,154 @@
+{
+  "ok": false,
+  "dry_run": false,
+  "no_execute_place": false,
+  "transform_mode": "live_tf",
+  "target": {
+    "frame_id": "map",
+    "x": 2.041867,
+    "y": 0.287858,
+    "z": 0.59,
+    "yaw": null,
+    "qx": null,
+    "qy": null,
+    "qz": null,
+    "qw": null,
+    "source": "cli",
+    "raw": null
+  },
+  "robot_pose": {
+    "frame_id": "map",
+    "x": 1.578002,
+    "y": 0.472793,
+    "yaw": -0.004074,
+    "source": "http",
+    "raw": {
+      "pitch": 0,
+      "roll": 0,
+      "x": 1.578002,
+      "y": 0.472793,
+      "yaw": -0.004074,
+      "z": 0
+    }
+  },
+  "waist_target": {
+    "place_x": 0.414712,
+    "place_y": -0.1829,
+    "place_z": -0.13335,
+    "waist_pose7": [
+      0.414712,
+      -0.1829,
+      -0.13335,
+      1e-06,
+      0.000515,
+      0.002211,
+      0.999997
+    ],
+    "transform_mode": "live_tf",
+    "x_base": 0.464615,
+    "y_base": -0.183044,
+    "dx_map": 0.463865,
+    "dy_map": -0.184935
+  },
+  "frames": {
+    "target_frame": "map",
+    "robot_pose_frame": "map",
+    "base_frame": "base_footprint",
+    "waist_frame": "waist_yaw_link"
+  },
+  "place_cli_argv": [
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T103855.result.place.json",
+    "--place-x",
+    "0.414712",
+    "--place-y",
+    "-0.182900",
+    "--place-z",
+    "-0.133350"
+  ],
+  "place_json_out": "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T103855.result.place.json",
+  "place_cmd": [
+    "/usr/bin/python3",
+    "-u",
+    "-m",
+    "grasp_pose_place_execute.main",
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T103855.result.place.json",
+    "--place-x",
+    "0.414712",
+    "--place-y",
+    "-0.182900",
+    "--place-z",
+    "-0.133350"
+  ],
+  "place_exit_code": 0,
+  "place_output_tail": "收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_ori = 1.047017\n收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_ori = 1.047017\n收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_ori = 1.047017\n收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_ori = 1.047017\n收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_ori = 1.047017\n收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_ori = 1.047017\n[GRASP-EXEC] QP-Stream approach: finished by deadline, 5.6cm from target\n[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 5.6cm)\n[GRASP-EXEC] approach TCP tracking: commanded=[0.4147,-0.1829,-0.0233] achieved=[0.4296,-0.1962,0.0293] err=[+14.9,-13.3,+52.6]mm |err|=56.3mm approach-axis tilt: achieved=-16.6deg commanded=+43.0deg (0=level) ori-err=60.0deg\n[PLACE-EXEC] approach failed; skipping place insert\n收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_ori = 1.047017\n[INFO] [1784255960.262393437] [XARM_manager]: Deactivated controllers: ['endpose_single_arm_qp_R_controller']\n[PLACE-EXEC] RETURN HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.300', '-0.683']\n[INFO] [1784255960.280176026] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']\n[INFO] [1784255960.281022841] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):\neai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.3, -0.683])\n[INFO] [1784255960.282205493] [XARM_manager]: Goal accepted. Waiting for result...\n[INFO] [1784255962.225377667] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace\n[INFO] [1784255962.225635561] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')\n[PLACE-EXEC] RETURN HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')\n{\n  \"arm\": \"right\",\n  \"motion_strategy\": \"qp_all\",\n  \"dry_run\": false,\n  \"motion\": {\n    \"place_pose7\": [\n      0.414712,\n      -0.1829,\n      -0.08335,\n      0.22941393277711944,\n      0.3262292453010775,\n      -0.6763556988345837,\n      -0.6192630261948527\n    ],\n    \"approach_pose7\": [\n      0.414712,\n      -0.1829,\n      -0.023349999999999996,\n      0.22941393277711944,\n      0.3262292453010775,\n      -0.6763556988345837,\n      -0.6192630261948527\n    ],\n    \"approach_tcp_tracking\": {\n      \"commanded_xyz\": [\n        0.414712,\n        -0.1829,\n        -0.023349999999999996\n      ],\n      \"achieved_xyz\": [\n        0.42962213372950964,\n        -0.19619502720625615,\n        0.029298280693476064\n      ],\n      \"error_mm\": [\n        14.910133729509612,\n        -13.295027206256139,\n        52.64828069347606\n      ],\n      \"error_norm_mm\": 56.31084528069167,\n      \"achieved_quat\": [\n        0.49673484477101815,\n        0.6290524854932276,\n        -0.410583911766721,\n        -0.4347048606623149\n      ],\n      \"approach_axis_tilt_deg\": -16.553174310914972,\n      \"commanded_approach_axis_tilt_deg\": 42.99131199460442,\n      \"orientation_error_deg\": 59.98963456764111\n    },\n    \"approach_ok\": false,\n    \"place_ok\": false,\n    \"released_ok\": null,\n    \"lift_ok\": null,\n    \"retract_ok\": null,\n    \"return_home_ok\": true\n  },\n  \"ok\": false\n}\n[PLACE-EXEC] saved result json: /home/ubuntu/cheng/logs/mcp/place_execute/20260717T103855.result.place.json",
+  "place_result": {
+    "arm": "right",
+    "motion_strategy": "qp_all",
+    "dry_run": false,
+    "motion": {
+      "place_pose7": [
+        0.414712,
+        -0.1829,
+        -0.08335,
+        0.229414,
+        0.326229,
+        -0.676356,
+        -0.619263
+      ],
+      "approach_pose7": [
+        0.414712,
+        -0.1829,
+        -0.02335,
+        0.229414,
+        0.326229,
+        -0.676356,
+        -0.619263
+      ],
+      "approach_tcp_tracking": {
+        "commanded_xyz": [
+          0.414712,
+          -0.1829,
+          -0.02335
+        ],
+        "achieved_xyz": [
+          0.429622,
+          -0.196195,
+          0.029298
+        ],
+        "error_mm": [
+          14.910134,
+          -13.295027,
+          52.648281
+        ],
+        "error_norm_mm": 56.310845,
+        "achieved_quat": [
+          0.496735,
+          0.629052,
+          -0.410584,
+          -0.434705
+        ],
+        "approach_axis_tilt_deg": -16.553174,
+        "commanded_approach_axis_tilt_deg": 42.991312,
+        "orientation_error_deg": 59.989635
+      },
+      "approach_ok": false,
+      "place_ok": false,
+      "released_ok": null,
+      "lift_ok": null,
+      "retract_ok": null,
+      "return_home_ok": true
+    },
+    "ok": false
+  },
+  "duration_sec": 26.586
+}

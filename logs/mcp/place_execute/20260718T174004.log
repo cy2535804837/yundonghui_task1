@@ -1,0 +1,15 @@
+[mcp] launched at 2026-07-18T17:40:04
+[mcp] cmd: /usr/bin/python3 -u -m world_place_execute.main --target-url  --target-x 2.072668325 --target-y 0.145105032 --target-z 0.650000000 --target-frame map --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/cheng/logs/mcp/place_execute/20260718T174004.result.json --timeout-sec 600.000 --use-live-waist-tf
+[mcp] cwd: /home/ubuntu/cheng
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 31 params from /home/ubuntu/cheng/world_place_execute/config.yaml
+[WORLD-PLACE] ERROR: RuntimeError("failed to GET robot pose URL 'http://192.168.41.6:1448/api/core/slam/v1/localization/pose': <urlopen error timed out>")
+{
+  "ok": false,
+  "dry_run": false,
+  "no_execute_place": false,
+  "transform_mode": "live_tf",
+  "error": "RuntimeError(\"failed to GET robot pose URL 'http://192.168.41.6:1448/api/core/slam/v1/localization/pose': <urlopen error timed out>\")",
+  "duration_sec": 3.005
+}
+[WORLD-PLACE] saved result json: /home/ubuntu/cheng/logs/mcp/place_execute/20260718T174004.result.json

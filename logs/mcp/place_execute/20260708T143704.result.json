@@ -1,0 +1,126 @@
+{
+  "arm": "right",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      0.45242568116313253,
+      -0.16984728397396107,
+      0.09494571059579338,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      0.3667007698421085,
+      -0.1887063502754973,
+      0.22677220506571932,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        0.3667007698421085,
+        -0.1887063502754973,
+        0.22677220506571932
+      ],
+      "achieved_xyz": [
+        0.3817392346826503,
+        -0.2010023050277455,
+        0.2304001784630355
+      ],
+      "error_mm": [
+        15.038464840541831,
+        -12.295954752248207,
+        3.6279733973161865
+      ],
+      "error_norm_mm": 19.761278273461514,
+      "achieved_quat": [
+        -0.2166051622036375,
+        -0.37634294073260843,
+        0.6584919949488803,
+        0.6146840548246815
+      ],
+      "approach_axis_tilt_deg": 38.527954045883966,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 6.293449437172449
+    },
+    "compliant_place": {
+      "ok": true,
+      "contact": false,
+      "reason": "reached_depth_no_contact",
+      "resist_n": 0.3132785791530037,
+      "traveled_m": 0.14010688604530325,
+      "planned_depth_m": 0.12753134765965113,
+      "ft_topic": "/arm_6dof_right",
+      "calib_path": "/home/ubuntu/niu/compliant_grasp_execute/ft_calibration/ft_calibration_right.json",
+      "calib_present": true,
+      "commanded_m": 0.14753134765965112,
+      "throttle_events": 0
+    },
+    "place_tcp_tracking": {
+      "commanded_xyz": [
+        0.45242568116313253,
+        -0.16984728397396107,
+        0.09494571059579338
+      ],
+      "achieved_xyz": [
+        0.48541626094674345,
+        -0.15531934693257504,
+        0.04264770122849598
+      ],
+      "error_mm": [
+        32.99057978361092,
+        14.527937041386025,
+        -52.2980093672974
+      ],
+      "error_norm_mm": 63.517880104102964,
+      "achieved_quat": [
+        -0.22515005901716786,
+        -0.388658919597961,
+        0.6630864306827812,
+        0.5988055448857171
+      ],
+      "approach_axis_tilt_deg": 36.61987974763395,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 7.697212405858923
+    },
+    "retract_tcp_tracking": {
+      "commanded_xyz": [
+        0.3667007698421085,
+        -0.1887063502754973,
+        0.22677220506571932
+      ],
+      "achieved_xyz": [
+        0.3710161894513569,
+        -0.18738526509974485,
+        0.208527635303244
+      ],
+      "error_mm": [
+        4.3154196092484165,
+        1.32108517575244,
+        -18.244569762475322
+      ],
+      "error_norm_mm": 18.794478930348333,
+      "achieved_quat": [
+        -0.21063688057616234,
+        -0.36385786888238847,
+        0.6719469204630674,
+        0.6096940969647899
+      ],
+      "approach_axis_tilt_deg": 40.27666497062397,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 4.968290371041281
+    },
+    "approach_ok": true,
+    "place_ok": true,
+    "released_ok": true,
+    "lift_ok": null,
+    "retract_ok": true,
+    "return_home_ok": true
+  },
+  "ok": true
+}

@@ -1,0 +1,124 @@
+[mcp] launched at 2026-07-15T19:45:07
+[mcp] cmd: /usr/bin/python3 -u -m grasp_pose_place_execute.main --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/cheng/logs/mcp/place_execute/20260715T194507.result.json --place-x 2.0584583808063526 --place-y 0.42830586363210743 --place-z 0.59
+[mcp] cwd: /home/ubuntu/cheng
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 93 params from /home/ubuntu/cheng/grasp_pose_place_execute/config.yaml
+[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='right' holding=True object=['remote control']
+[INFO] [1784115907.670832972] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1784115907.932312085] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1784115907.945536317] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1784115907.954467568] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1784115907.967139182] [XARM_manager]: /joint_action_report 服务已启动
+[PLACE-EXEC] applied place tilt +45.0deg about waist Y -> quat=['0.2294', '0.3262', '-0.6764', '-0.6193']
+[PLACE-EXEC] place TCP target (waist) from args --place-x/y/z: x=2.0585 y=0.4283 z=0.6400 (+5cm release clearance)
+[PLACE-EXEC] approach along place axis: dist=0.120m extra_z=0.050m tool_z=[-0.714,-0.157,0.682] approach_xyz=['1.9727', '0.4094', '0.7718']
+[INFO] [1784115912.628934254] [XARM_manager]: Deactivated controllers: ['endpose_body_controller']
+[PLACE-EXEC] arms enabled (mode 3); placing with 'right' arm
+[PLACE-EXEC] gripper: connecting in background (overlaps approach)
+[GRASP-EXEC] gripper: arm='right' -> stable by-id port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D30JLK40-if00-port0
+[INFO] [1784115912.652464957] [XARM_manager]: Deactivated controllers: []
+[PLACE-EXEC] START HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.300', '-0.683']
+[INFO] [1784115912.671742452] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] gripper: cached serial port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D30JLK40-if00-port0 -> /tmp/robotiq_gripper_port.txt
+[GRASP-EXEC] gripper controller ready: backend=modbus_rtu port=auto slave=9 (wait_timeout=8.0s) [connect took 0.04s]
+[INFO] [1784115912.688213061] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.3, -0.683])
+[INFO] [1784115912.689745960] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1784115914.148004349] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1784115914.148507434] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] START HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[INFO] [1784115914.161560032] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+[WARN] [1784115914.801016184] [XARM_manager]: TF查找超时: waist_yaw_link <- right_tcp_link, 超时0.5s
+[PLACE-EXEC] TF warmup ok: read TCP after 2 attempt(s)
+[PLACE-EXEC] ARM: approach to middle waypoint
+[PLACE-EXEC] approach reorient 71.9deg > 35deg/hop -> split into 3 QP hops (keeps each under the tracking limit)
+[PLACE-EXEC] approach hop 1/3 (t=0.33)
+[INFO] [1784115914.820181632] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_R_controller']
+[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=68.5cm rot=26.6deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 9.9cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 9.9cm)
+[PLACE-EXEC] approach hop 2/3 (t=0.67)
+[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=79.1cm rot=23.8deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.789525
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.789525
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.789525
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 78.0cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 78.0cm)
+[PLACE-EXEC] approach hop 3/3 (t=1.00)
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.789525
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.789525
+[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=147.7cm rot=43.3deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 207.4cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 207.4cm)
+[GRASP-EXEC] approach TCP tracking: commanded=[1.9727,0.4094,0.7718] achieved=[0.1144,-0.2620,0.1418] err=[-1858.3,-671.4,-630.1]mm |err|=2073.9mm approach-axis tilt: achieved=-28.9deg commanded=+43.0deg (0=level) ori-err=76.5deg
+[PLACE-EXEC] approach failed; skipping place insert
+[INFO] [1784116031.385472667] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller', 'jointspace_arm_R_controller']
+[PLACE-EXEC] RETURN HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.300', '-0.683']
+[INFO] [1784116031.404737753] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[INFO] [1784116031.405789946] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.3, -0.683])
+[INFO] [1784116031.407619111] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1784116031.873364174] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1784116031.873603185] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] RETURN HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+{
+  "arm": "right",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      2.0584583808063526,
+      0.42830586363210743,
+      0.64,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      1.9727334694853285,
+      0.4094467973305712,
+      0.771826494469926,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        1.9727334694853285,
+        0.4094467973305712,
+        0.771826494469926
+      ],
+      "achieved_xyz": [
+        0.1144210581647184,
+        -0.2619911311793268,
+        0.1417695007462761
+      ],
+      "error_mm": [
+        -1858.31241132061,
+        -671.437928509898,
+        -630.05699372365
+      ],
+      "error_norm_mm": 2073.9155540305796,
+      "achieved_quat": [
+        0.7092081558159752,
+        0.4883230648886794,
+        -0.3353826602701022,
+        -0.3822078586475939
+      ],
+      "approach_axis_tilt_deg": -28.873096264970034,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 76.46005957853104
+    },
+    "approach_ok": false,
+    "place_ok": false,
+    "released_ok": null,
+    "lift_ok": null,
+    "retract_ok": null,
+    "return_home_ok": true
+  },
+  "ok": false
+}
+[PLACE-EXEC] saved result json: /home/ubuntu/cheng/logs/mcp/place_execute/20260715T194507.result.json

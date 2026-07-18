@@ -1,0 +1,828 @@
+[mcp] launched at 2026-07-15T19:47:13
+[mcp] cmd: /usr/bin/python3 -u -m grasp_pose_place_execute.main --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/cheng/logs/mcp/place_execute/20260715T194713.result.json --place-x 2.0584583808063526 --place-y 0.42830586363210743 --place-z 0.59
+[mcp] cwd: /home/ubuntu/cheng
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 93 params from /home/ubuntu/cheng/grasp_pose_place_execute/config.yaml
+[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='right' holding=True object=['remote control']
+[INFO] [1784116034.027106316] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1784116035.174798895] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1784116035.187664492] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1784116035.199674839] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1784116035.215122314] [XARM_manager]: /joint_action_report 服务已启动
+[PLACE-EXEC] applied place tilt +45.0deg about waist Y -> quat=['0.2294', '0.3262', '-0.6764', '-0.6193']
+[PLACE-EXEC] place TCP target (waist) from args --place-x/y/z: x=2.0585 y=0.4283 z=0.6400 (+5cm release clearance)
+[PLACE-EXEC] approach along place axis: dist=0.120m extra_z=0.050m tool_z=[-0.714,-0.157,0.682] approach_xyz=['1.9727', '0.4094', '0.7718']
+[INFO] [1784116040.910373496] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+[PLACE-EXEC] arms enabled (mode 3); placing with 'right' arm
+[PLACE-EXEC] gripper: connecting in background (overlaps approach)
+[GRASP-EXEC] gripper: arm='right' -> stable by-id port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D30JLK40-if00-port0
+[INFO] [1784116040.931805461] [XARM_manager]: Deactivated controllers: []
+[PLACE-EXEC] START HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.300', '-0.683']
+[INFO] [1784116040.949271091] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[INFO] [1784116040.969575857] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.3, -0.683])
+[INFO] [1784116040.971543941] [XARM_manager]: Goal accepted. Waiting for result...
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] gripper: cached serial port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D30JLK40-if00-port0 -> /tmp/robotiq_gripper_port.txt
+[GRASP-EXEC] gripper controller ready: backend=modbus_rtu port=auto slave=9 (wait_timeout=8.0s) [connect took 0.05s]
+[INFO] [1784116041.430058401] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1784116041.430319176] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] START HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[INFO] [1784116041.439777845] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+[WARN] [1784116042.076527392] [XARM_manager]: TF查找超时: waist_yaw_link <- right_tcp_link, 超时0.5s
+[WARN] [1784116042.686280212] [XARM_manager]: TF查找超时: waist_yaw_link <- right_tcp_link, 超时0.5s
+[PLACE-EXEC] TF warmup ok: read TCP after 3 attempt(s)
+[PLACE-EXEC] ARM: approach to middle waypoint
+[PLACE-EXEC] approach reorient 76.5deg > 35deg/hop -> split into 3 QP hops (keeps each under the tracking limit)
+[PLACE-EXEC] approach hop 1/3 (t=0.33)
+[INFO] [1784116042.703343730] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_R_controller']
+[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=69.1cm rot=25.5deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 11.4cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 11.4cm)
+[PLACE-EXEC] approach hop 2/3 (t=0.67)
+[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=79.8cm rot=25.3deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738990
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738931
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738857
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738829
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738804
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738834
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738534
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.738361
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.737920
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.737615
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.737444
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.737010
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.736574
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.735849
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.735450
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.734388
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.734008
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.734020
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.731125
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.731143
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.730654
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.728449
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.725898
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.715581
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.715185
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.710800
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.710816
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.709027
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.708396
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.705762
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.704167
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.703265
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.702012
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.699507
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.697319
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.692954
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.690797
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.690397
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.687582
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.686096
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.683929
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.683167
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.681147
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.678797
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.677157
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.676592
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.675577
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.675631
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.671794
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.669994
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.668915
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.666904
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.666638
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.665652
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.665661
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.664596
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.663618
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.661083
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.660232
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.659725
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.657756
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.655815
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.654398
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.651891
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.651555
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.650388
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.645497
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.643931
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.642631
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.640964
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.640187
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.637696
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.636720
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.635634
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.634992
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.634494
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.633782
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.633447
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.631587
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.631082
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.630673
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.630146
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.630175
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.629284
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.629201
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.628765
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.628352
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.627339
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.626775
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.626470
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.625357
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.625376
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.623759
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.623520
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.623380
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.622937
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.622731
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.622205
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.621754
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.621502
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.620527
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.620507
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.619738
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.619146
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.618801
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617891
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617813
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617584
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617573
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617192
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616165
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615999
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615966
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615670
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615114
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614986
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614676
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614572
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614385
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614319
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.613181
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.613102
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612964
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612547
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612539
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612467
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612193
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612201
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612105
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612140
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611932
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611954
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611830
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611697
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611593
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611504
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611360
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611309
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611303
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611221
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610911
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610836
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610737
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610807
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610729
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610527
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610578
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610599
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610544
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610516
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610473
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610502
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610364
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610369
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610315
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610316
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610316
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610318
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610257
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610352
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610296
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610303
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610261
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610309
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610346
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610291
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610399
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610404
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610375
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610475
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610414
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610502
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610677
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610773
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.610881
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611007
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611046
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611174
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611206
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611259
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611307
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611370
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611524
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611553
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611746
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612166
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612398
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612415
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612528
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612569
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612705
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612725
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612813
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612966
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.613052
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.613333
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.613550
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.613660
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614125
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614211
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614253
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614409
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614502
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614548
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614633
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614812
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614868
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614938
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615047
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615047
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615232
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615264
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615424
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615424
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615472
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615565
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615748
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615814
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615910
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615944
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615994
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616152
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616219
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616288
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616531
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616568
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616616
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616772
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616857
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616883
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617013
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617115
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617148
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617265
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617384
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617454
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617598
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617542
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617533
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617516
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617437
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.617165
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616692
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.616500
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.615547
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.614287
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.612593
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611677
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.611204
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.609993
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.606654
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.603585
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.603587
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.601847
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.600652
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.593967
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.591004
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.583181
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.579502
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.578706
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.575511
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.574960
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.574993
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.571955
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.568998
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.566847
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.564872
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.563357
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.560443
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.559534
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.555272
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.551581
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.544340
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.542178
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.541239
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.537499
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.529800
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.526697
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.525545
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.520647
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.519784
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.518178
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.516152
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.515622
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.514069
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.512523
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.512575
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.511323
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.507091
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505124
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504121
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502288
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500273
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499701
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499107
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497041
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496885
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496675
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.494855
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.494308
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.493069
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.492688
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.491636
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.491661
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490682
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.489753
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.489199
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.488723
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.488654
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.487124
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.486118
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.485671
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.485070
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.485109
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.484597
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.484063
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.483143
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.482823
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.482045
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.481631
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.480932
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.480573
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.480320
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479954
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479714
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479714
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479533
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479521
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479521
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479533
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479311
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479516
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479517
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479602
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479467
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479650
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479590
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479596
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479882
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.479941
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.480101
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.480569
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.481589
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.481724
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.481968
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.481961
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.482309
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.482381
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.482522
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.482543
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.482834
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.483360
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.483525
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.483901
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.484148
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.484547
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.484947
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.485765
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.486216
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.486623
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.487520
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.488055
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.488217
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.488541
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.489456
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490330
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490576
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490876
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.491303
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.491921
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.492073
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.493434
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.493755
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.494723
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495230
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498159
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498126
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499560
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500741
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501811
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502029
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502131
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502158
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502183
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500443
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500288
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499749
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499494
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499057
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498909
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496102
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.494411
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.492240
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490702
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490808
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490604
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490314
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490104
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490217
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490272
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490084
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490297
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490116
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490047
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490145
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490290
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490469
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490446
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490781
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490963
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490955
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.490905
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.491095
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.491837
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.491710
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.492324
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.492330
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.492715
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.492791
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.493041
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.493626
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.493849
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.494286
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.494550
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.494550
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495520
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495634
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495267
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495283
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495309
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495478
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495618
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495633
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495652
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495700
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495689
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495791
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.495900
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496297
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496247
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496288
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496381
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496429
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496428
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496548
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.496602
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497025
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497070
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497070
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497156
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497345
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497388
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497687
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497714
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497762
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497757
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497702
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497695
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497795
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497775
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497807
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497826
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.497909
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498010
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498100
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498119
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498190
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498277
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498383
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498439
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498453
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498518
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498588
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498588
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498626
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498758
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498826
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.498933
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499294
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499294
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499779
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499947
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499924
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499929
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499932
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499977
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499988
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500060
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.508739
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.508547
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.507811
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.506948
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.506035
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505290
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504628
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504802
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505538
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505898
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.506159
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.506195
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505852
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505636
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505636
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505393
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505397
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505247
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.505125
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504972
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504665
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504530
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504439
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504439
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504308
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504283
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504237
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504048
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.504000
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503895
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503879
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503835
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503827
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503777
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503746
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503665
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503654
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503609
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503443
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503364
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503265
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503157
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503124
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503063
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.503033
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502925
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502858
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502741
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502584
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502411
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502403
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502341
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502235
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502235
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502194
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502076
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502047
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.502009
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501941
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501912
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501862
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501842
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501806
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501781
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501739
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501616
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501599
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501566
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501518
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501518
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501489
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501444
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501401
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501341
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501224
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501215
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501208
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501123
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501089
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501079
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.501064
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500999
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500976
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500963
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500938
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500855
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500825
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500753
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500688
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500668
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500652
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500607
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500591
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500530
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500515
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500515
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500484
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500484
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500468
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500450
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500453
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500419
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500415
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500394
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500399
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500366
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500366
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500349
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500341
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500326
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500303
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500303
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500279
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500279
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500261
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500238
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500233
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500233
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500206
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500181
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500158
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500158
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500040
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.500019
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499963
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499954
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499921
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499921
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499913
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499850
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499831
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499795
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499775
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499754
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499744
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499729
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499710
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499693
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499682
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499674
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499647
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499656
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499637
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499621
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499609
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499604
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499601
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499601
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499589
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499592
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499585
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499563
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499559
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499565
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499573
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499559
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499553
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499554
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499538
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499535
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499519
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499522
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499507
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499507
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499481
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499480
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499476
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499476
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499475
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499487
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499479
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499460
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499456
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499455
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499459
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499446
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499441
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499437
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499426
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499426
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499422
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499410
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499406
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499410
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499406
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499394
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499393
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499389
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499380
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499381
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499376
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499346
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499369
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499365
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499357
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499352
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499352
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499336
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499336
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499314
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499314
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499316
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499317
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499321
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499294
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499313
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499308
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499300
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499289
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499292
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499282
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499284
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499284
+收到警告信息: source=SingleArmQpController_right_arm, code=300100, info=目标超出跟踪限, dis_err = 0.499284
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 111.4cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 111.4cm)
+[PLACE-EXEC] approach hop 3/3 (t=1.00)
+[INFO] [1784116104.467743730] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+收到警告信息: source=SingleArmQpController_right_arm, code=600120, info=on_activate: joint shoulder_pitch_r_joint 指令位置与当前实际位置的差值大于30度，当前实际位置为 0.844025 ，指令位置为 -0.557602 指令值被重置为当前实际位置
+收到警告信息: source=SingleArmQpController_right_arm, code=600120, info=on_activate: joint shoulder_yaw_r_joint 指令位置与当前实际位置的差值大于30度，当前实际位置为 -2.38419e-05 ，指令位置为 1.09016 指令值被重置为当前实际位置
+收到警告信息: source=SingleArmQpController_right_arm, code=600120, info=on_activate: joint elbow_pitch_r_joint 指令位置与当前实际位置的差值大于30度，当前实际位置为 -2.216 ，指令位置为 -1.33301 指令值被重置为当前实际位置
+收到警告信息: source=SingleArmQpController_right_arm, code=600120, info=on_activate: joint elbow_yaw_r_joint 指令位置与当前实际位置的差值大于30度，当前实际位置为 -1.52904 ，指令位置为 0.388744 指令值被重置为当前实际位置
+[INFO] [1784116104.477801339] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_R_controller']
+[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=180.0cm rot=43.2deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 234.6cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 234.6cm)
+[GRASP-EXEC] approach TCP tracking: commanded=[1.9727,0.4094,0.7718] achieved=[-0.0120,-0.3003,-0.2592] err=[-1984.7,-709.8,-1031.0]mm |err|=2346.5mm approach-axis tilt: achieved=+77.9deg commanded=+43.0deg (0=level) ori-err=100.4deg
+[PLACE-EXEC] approach failed; skipping place insert
+[INFO] [1784116172.226428594] [XARM_manager]: Deactivated controllers: []
+[PLACE-EXEC] RETURN HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.300', '-0.683']
+[INFO] [1784116172.247055643] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[INFO] [1784116172.248106657] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.3, -0.683])
+[INFO] [1784116172.251028723] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1784116174.572982506] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1784116174.573239781] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] RETURN HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+{
+  "arm": "right",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      2.0584583808063526,
+      0.42830586363210743,
+      0.64,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      1.9727334694853285,
+      0.4094467973305712,
+      0.771826494469926,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        1.9727334694853285,
+        0.4094467973305712,
+        0.771826494469926
+      ],
+      "achieved_xyz": [
+        -0.012006146606511996,
+        -0.30031378171246603,
+        -0.2591742523849176
+      ],
+      "error_mm": [
+        -1984.7396160918404,
+        -709.7605790430373,
+        -1031.0007468548436
+      ],
+      "error_norm_mm": 2346.4684023577092,
+      "achieved_quat": [
+        -0.07634165546867969,
+        0.07320825395697284,
+        0.046545103327961794,
+        0.9933005872086567
+      ],
+      "approach_axis_tilt_deg": 77.85682620657157,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 100.38257190404822
+    },
+    "approach_ok": false,
+    "place_ok": false,
+    "released_ok": null,
+    "lift_ok": null,
+    "retract_ok": null,
+    "return_home_ok": true
+  },
+  "ok": false
+}
+[PLACE-EXEC] saved result json: /home/ubuntu/cheng/logs/mcp/place_execute/20260715T194713.result.json

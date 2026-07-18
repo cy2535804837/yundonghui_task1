@@ -1,0 +1,8 @@
+[mcp] launched at 2026-06-11T20:51:35
+[mcp] phase: place
+[mcp] cmd: /usr/bin/python3 -u -m grasp_pose_place_execute.main --handoff-in /tmp/grasp_handoff.json --arm auto --dry-run --place-z 0.82 --json-out /home/ubuntu/niu/logs/mcp/place_execute/20260611T205135.result.json
+[mcp] cwd: /home/ubuntu/niu
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 77 params from /home/ubuntu/niu/grasp_pose_place_execute/config.yaml
+[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='left' holding=False object=['peach', 'banana']
+[PLACE-EXEC] handoff says the gripper is NOT holding an object (holding=false). Run grasp with --no-release-on-finish, or pass --no-require-holding to place anyway.

@@ -1,0 +1,176 @@
+[日志] 日志文件: logs/grasp/grasp_260708_130336.log
+[日志] 执行命令: python3 -m grasp_pose_place_execute.main
+[CONFIG] loaded 91 params from /home/ubuntu/niu/grasp_pose_place_execute/config.yaml
+[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='left' holding=True object=['remote-control']
+[INFO] [1783487017.485032750] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1783487017.740947885] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1783487017.746915043] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1783487017.751461391] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1783487017.764280251] [XARM_manager]: /joint_action_report 服务已启动
+[PLACE-EXEC] applied place tilt +45.0deg about waist Y -> quat=['-0.2294', '0.3262', '0.6764', '-0.6193']
+[PLACE-EXEC] place TCP target (waist) from handoff grasp_pose7 (original detected grasp position): x=0.3854 y=0.1882 z=0.2243 (+5cm release clearance)
+[PLACE-EXEC] approach along place axis: dist=0.120m extra_z=0.120m tool_z=[-0.714,0.157,0.682] approach_xyz=['0.2997', '0.2071', '0.4261']
+[INFO] [1783487022.430298122] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller']
+[PLACE-EXEC] arms enabled (mode 3); placing with 'left' arm
+[PLACE-EXEC] gripper: connecting in background (overlaps approach)
+[GRASP-EXEC] gripper: arm='left' -> stable by-id port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_DU0E2IPR-if00-port0
+[INFO] [1783487022.449212975] [XARM_manager]: Deactivated controllers: []
+[PLACE-EXEC] START HOME: left -> joints=['0.844', '0.026', '-0.006', '-2.216', '-1.529', '0.200', '0.683']
+[INFO] [1783487022.471549201] [XARM_manager]: Activated controllers: ['jointspace_arm_L_controller']
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] gripper: cached serial port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_DU0E2IPR-if00-port0 -> /tmp/robotiq_gripper_port.txt
+[GRASP-EXEC] gripper controller ready: backend=modbus_rtu port=auto slave=9 (wait_timeout=8.0s) [connect took 0.05s]
+[INFO] [1783487022.491777252] [XARM_manager]: Sending goal to action server /jointspace_arm_L_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, 0.026, -0.006, -2.216, -1.529, 0.2, 0.683])
+[INFO] [1783487023.001746899] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783487023.638939783] [XARM_manager]: Action result received from /jointspace_arm_L_controller/jointspace
+[INFO] [1783487023.639277780] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] START HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[INFO] [1783487023.647678435] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller']
+[WARN] [1783487024.280819972] [XARM_manager]: TF查找超时: waist_yaw_link <- left_tcp_link, 超时0.5s
+[PLACE-EXEC] TF warmup ok: read TCP after 2 attempt(s)
+[PLACE-EXEC] ARM: approach to middle waypoint
+[INFO] [1783487024.298291907] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_L_controller']
+[GRASP-EXEC] QP-Stream left -> approach (pure-pursuit): pos=34.2cm rot=74.7deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 2.6cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 2.6cm)
+[GRASP-EXEC] approach TCP tracking: commanded=[0.2997,0.2071,0.4261] achieved=[0.3189,0.2248,0.4281] err=[+19.2,+17.7,+2.0]mm |err|=26.2mm approach-axis tilt: achieved=+38.7deg commanded=+43.0deg (0=level) ori-err=5.2deg
+[PLACE-EXEC] approach failed; skipping place insert
+[INFO] [1783487041.733660352] [XARM_manager]: Deactivated controllers: ['endpose_single_arm_qp_L_controller']
+收到警告信息: source=SingleArmQpController_left_arm, code=300256, info=关节最小限位
+[PLACE-EXEC] RETURN HOME: left -> joints=['0.844', '0.026', '-0.006', '-2.216', '-1.529', '0.200', '0.683']
+[INFO] [1783487041.752048264] [XARM_manager]: Activated controllers: ['jointspace_arm_L_controller']
+[INFO] [1783487041.753214566] [XARM_manager]: Sending goal to action server /jointspace_arm_L_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, 0.026, -0.006, -2.216, -1.529, 0.2, 0.683])
+[INFO] [1783487041.754884032] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783487044.175981166] [XARM_manager]: Action result received from /jointspace_arm_L_controller/jointspace
+[INFO] [1783487044.176459163] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] RETURN HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+{
+  "arm": "left",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      0.3854165064817782,
+      0.18823133490624655,
+      0.22426757203412323,
+      -0.22941393277711944,
+      0.3262292453010775,
+      0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      0.29969159516075417,
+      0.20709040120778277,
+      0.4260940665040492,
+      -0.22941393277711944,
+      0.3262292453010775,
+      0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        0.29969159516075417,
+        0.20709040120778277,
+        0.4260940665040492
+      ],
+      "achieved_xyz": [
+        0.3189264954784886,
+        0.22475961690073543,
+        0.42811096552177913
+      ],
+      "error_mm": [
+        19.23490031773445,
+        17.669215692952655,
+        2.016899017729945
+      ],
+      "error_norm_mm": 26.196382480888182,
+      "achieved_quat": [
+        0.2527172775280006,
+        -0.3513499432081471,
+        -0.6812740808594755,
+        0.590383622567178
+      ],
+      "approach_axis_tilt_deg": 38.709671969071515,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 5.166351330256967
+    },
+    "approach_ok": false,
+    "place_ok": false,
+    "released_ok": null,
+    "lift_ok": null,
+    "retract_ok": null,
+    "return_home_ok": true
+  },
+  "ok": false
+}
+[PLACE-EXEC] saved result json: /tmp/place_exec.json

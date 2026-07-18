@@ -1,0 +1,98 @@
+{
+  "arm": "right",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      0.410198,
+      -0.178829,
+      -0.08281000000000001,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      0.410198,
+      -0.178829,
+      -0.02281000000000001,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        0.410198,
+        -0.178829,
+        -0.02281000000000001
+      ],
+      "achieved_xyz": [
+        0.4180483596495983,
+        -0.1720374770651713,
+        -0.0076414931071064895
+      ],
+      "error_mm": [
+        7.850359649598293,
+        6.791522934828681,
+        15.168506892893522
+      ],
+      "error_norm_mm": 18.380330023209684,
+      "achieved_quat": [
+        -0.24365390556586963,
+        -0.369798052993318,
+        0.6585450967207658,
+        0.6084410652560251
+      ],
+      "approach_axis_tilt_deg": 37.42802577261031,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 5.770553827846329
+    },
+    "compliant_place": {
+      "ok": false,
+      "contact": false,
+      "reason": "bad_ft_baseline",
+      "resist_n": -17.174030022129116,
+      "traveled_m": 0.0,
+      "planned_depth_m": 0.09762843806840682,
+      "ft_topic": "/arm_6dof_right",
+      "calib_path": "/home/ubuntu/cheng/compliant_grasp_execute/ft_calibration/ft_calibration_right.json",
+      "calib_present": true,
+      "baseline_force_n": 20.02014634857749
+    },
+    "place_tcp_tracking": {
+      "commanded_xyz": [
+        0.410198,
+        -0.178829,
+        -0.08281000000000001
+      ],
+      "achieved_xyz": [
+        0.42746628719911606,
+        -0.17683004249529913,
+        -0.025809070069411022
+      ],
+      "error_mm": [
+        17.26828719911605,
+        1.99895750470086,
+        57.00092993058899
+      ],
+      "error_norm_mm": 59.5927477705859,
+      "achieved_quat": [
+        -0.32086287745852343,
+        -0.4601199920853497,
+        0.5940890907545123,
+        0.5765368669902136
+      ],
+      "approach_axis_tilt_deg": 21.75714208938646,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 21.433473382603637
+    },
+    "approach_ok": true,
+    "place_ok": false,
+    "released_ok": null,
+    "lift_ok": null,
+    "retract_ok": null,
+    "return_home_ok": true
+  },
+  "ok": false
+}

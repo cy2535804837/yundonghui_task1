@@ -1,0 +1,166 @@
+[mcp] launched at 2026-07-17T10:45:29
+[mcp] cmd: /usr/bin/python3 -u -m world_place_execute.main --target-url  --target-x 2.041867228 --target-y 0.287858000 --target-z 0.590000000 --target-frame map --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/cheng/logs/mcp/place_execute/20260717T104529.result.json --timeout-sec 600.000 --use-live-waist-tf
+[mcp] cwd: /home/ubuntu/cheng
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 31 params from /home/ubuntu/cheng/world_place_execute/config.yaml
+[INFO] [1784256330.140691063] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1784256331.898125432] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1784256331.903350857] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1784256331.909210197] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[WORLD-PLACE] converted target -> waist place x=0.4116 y=-0.1789 z=-0.1334
+[WORLD-PLACE] launching place node: /usr/bin/python3 -u -m grasp_pose_place_execute.main --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/cheng/logs/mcp/place_execute/20260717T104529.result.place.json --place-x 0.411620 --place-y -0.178940 --place-z -0.133428
+{
+  "ok": false,
+  "dry_run": false,
+  "no_execute_place": false,
+  "transform_mode": "live_tf",
+  "target": {
+    "frame_id": "map",
+    "x": 2.041867,
+    "y": 0.287858,
+    "z": 0.59,
+    "yaw": null,
+    "qx": null,
+    "qy": null,
+    "qz": null,
+    "qw": null,
+    "source": "cli",
+    "raw": null
+  },
+  "robot_pose": {
+    "frame_id": "map",
+    "x": 1.582832,
+    "y": 0.473227,
+    "yaw": -0.013701,
+    "source": "http",
+    "raw": {
+      "pitch": 0,
+      "roll": 0,
+      "x": 1.582832,
+      "y": 0.473227,
+      "yaw": -0.013701,
+      "z": 0
+    }
+  },
+  "waist_target": {
+    "place_x": 0.41162,
+    "place_y": -0.17894,
+    "place_z": -0.133428,
+    "waist_pose7": [
+      0.41162,
+      -0.17894,
+      -0.133428,
+      4e-06,
+      0.000563,
+      0.007,
+      0.999975
+    ],
+    "transform_mode": "live_tf",
+    "x_base": 0.461531,
+    "y_base": -0.179063,
+    "dx_map": 0.459035,
+    "dy_map": -0.185369
+  },
+  "frames": {
+    "target_frame": "map",
+    "robot_pose_frame": "map",
+    "base_frame": "base_footprint",
+    "waist_frame": "waist_yaw_link"
+  },
+  "place_cli_argv": [
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T104529.result.place.json",
+    "--place-x",
+    "0.411620",
+    "--place-y",
+    "-0.178940",
+    "--place-z",
+    "-0.133428"
+  ],
+  "place_json_out": "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T104529.result.place.json",
+  "place_cmd": [
+    "/usr/bin/python3",
+    "-u",
+    "-m",
+    "grasp_pose_place_execute.main",
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T104529.result.place.json",
+    "--place-x",
+    "0.411620",
+    "--place-y",
+    "-0.178940",
+    "--place-z",
+    "-0.133428"
+  ],
+  "place_exit_code": 0,
+  "place_output_tail": "[INFO] [1784256354.244973652] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_R_controller']\n[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=1.4cm rot=17.8deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False\n[PLACE-EXEC] approach hop 2/2 (t=1.00)\n[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=2.9cm rot=35.7deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False\nActivation completed. Activation time :  3.295548915863037\n[GRASP-EXEC] gripper: cached serial port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D30JLK40-if00-port0 -> /tmp/robotiq_gripper_port.txt\n[GRASP-EXEC] gripper controller ready: backend=modbus_rtu port=auto slave=9 (wait_timeout=8.0s) [connect took 3.89s]\n[GRASP-EXEC] QP-Stream approach: finished by deadline, 2.9cm from target\n[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 2.9cm)\n[GRASP-EXEC] approach TCP tracking: commanded=[0.4116,-0.1789,-0.0234] achieved=[0.4336,-0.1792,-0.0052] err=[+22.0,-0.3,+18.2]mm |err|=28.5mm approach-axis tilt: achieved=+7.6deg commanded=+43.0deg (0=level) ori-err=35.7deg\n[PLACE-EXEC] approach failed; skipping place insert\n[INFO] [1784256362.306130907] [XARM_manager]: Deactivated controllers: ['endpose_single_arm_qp_R_controller']\n[PLACE-EXEC] RETURN HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.300', '-0.683']\n[INFO] [1784256362.324596620] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']\n[INFO] [1784256362.325300592] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):\neai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.3, -0.683])\n[INFO] [1784256362.326352387] [XARM_manager]: Goal accepted. Waiting for result...\n[INFO] [1784256364.330911572] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace\n[INFO] [1784256364.331149941] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')\n[PLACE-EXEC] RETURN HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')\n{\n  \"arm\": \"right\",\n  \"motion_strategy\": \"qp_all\",\n  \"dry_run\": false,\n  \"motion\": {\n    \"place_pose7\": [\n      0.41162,\n      -0.17894,\n      -0.08342799999999999,\n      0.22941393277711944,\n      0.3262292453010775,\n      -0.6763556988345837,\n      -0.6192630261948527\n    ],\n    \"approach_pose7\": [\n      0.41162,\n      -0.17894,\n      -0.02342799999999999,\n      0.22941393277711944,\n      0.3262292453010775,\n      -0.6763556988345837,\n      -0.6192630261948527\n    ],\n    \"approach_tcp_tracking\": {\n      \"commanded_xyz\": [\n        0.41162,\n        -0.17894,\n        -0.02342799999999999\n      ],\n      \"achieved_xyz\": [\n        0.43361388195806505,\n        -0.17921803101667894,\n        -0.005239352248386231\n      ],\n      \"error_mm\": [\n        21.993881958065064,\n        -0.2780310166789479,\n        18.18864775161376\n      ],\n      \"error_norm_mm\": 28.54181234371461,\n      \"achieved_quat\": [\n        -0.39071842304746385,\n        -0.5301698778546874,\n        0.5320529133648728,\n        0.5321453860429501\n      ],\n      \"approach_axis_tilt_deg\": 7.615123916108307,\n      \"commanded_approach_axis_tilt_deg\": 42.99131199460442,\n      \"orientation_error_deg\": 35.65290707158248\n    },\n    \"approach_ok\": false,\n    \"place_ok\": false,\n    \"released_ok\": null,\n    \"lift_ok\": null,\n    \"retract_ok\": null,\n    \"return_home_ok\": true\n  },\n  \"ok\": false\n}\n[PLACE-EXEC] saved result json: /home/ubuntu/cheng/logs/mcp/place_execute/20260717T104529.result.place.json",
+  "place_result": {
+    "arm": "right",
+    "motion_strategy": "qp_all",
+    "dry_run": false,
+    "motion": {
+      "place_pose7": [
+        0.41162,
+        -0.17894,
+        -0.083428,
+        0.229414,
+        0.326229,
+        -0.676356,
+        -0.619263
+      ],
+      "approach_pose7": [
+        0.41162,
+        -0.17894,
+        -0.023428,
+        0.229414,
+        0.326229,
+        -0.676356,
+        -0.619263
+      ],
+      "approach_tcp_tracking": {
+        "commanded_xyz": [
+          0.41162,
+          -0.17894,
+          -0.023428
+        ],
+        "achieved_xyz": [
+          0.433614,
+          -0.179218,
+          -0.005239
+        ],
+        "error_mm": [
+          21.993882,
+          -0.278031,
+          18.188648
+        ],
+        "error_norm_mm": 28.541812,
+        "achieved_quat": [
+          -0.390718,
+          -0.53017,
+          0.532053,
+          0.532145
+        ],
+        "approach_axis_tilt_deg": 7.615124,
+        "commanded_approach_axis_tilt_deg": 42.991312,
+        "orientation_error_deg": 35.652907
+      },
+      "approach_ok": false,
+      "place_ok": false,
+      "released_ok": null,
+      "lift_ok": null,
+      "retract_ok": null,
+      "return_home_ok": true
+    },
+    "ok": false
+  },
+  "duration_sec": 34.768
+}
+[WORLD-PLACE] saved result json: /home/ubuntu/cheng/logs/mcp/place_execute/20260717T104529.result.json

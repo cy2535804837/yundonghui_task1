@@ -1,0 +1,348 @@
+{
+  "arm": "right",
+  "pipeline_version": "accelerated",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "pre_cycle_move_ok": true,
+    "detected_pose7": [
+      0.2584697624375765,
+      -0.3220207514231357,
+      -0.07005550343520445,
+      -0.42110032380007173,
+      -0.48006411580926694,
+      0.6398930336978217,
+      0.4274925349438747
+    ],
+    "approach_pose7": [
+      0.26613101573592235,
+      -0.3429454412406856,
+      0.04791313982078883,
+      0.3492030751478152,
+      0.526875714977375,
+      -0.6406292940598699,
+      -0.4359510303540321
+    ],
+    "grasp_pose7": [
+      0.26613101573592235,
+      -0.3429454412406856,
+      -0.07208686017921116,
+      0.3492030751478152,
+      0.526875714977375,
+      -0.6406292940598699,
+      -0.4359510303540321
+    ],
+    "lift_pose7": [
+      0.26613101573592235,
+      -0.3429454412406856,
+      0.04791313982078883,
+      0.42983449680948843,
+      0.5792712481834906,
+      -0.5895684739306128,
+      -0.3634503280059092
+    ],
+    "pre_home_pose7": [
+      0.08613101573592236,
+      -0.4429454412406856,
+      0.09791313982078884,
+      0.42983449680948843,
+      0.5792712481834906,
+      -0.5895684739306128,
+      -0.3634503280059092
+    ],
+    "grasp_xyz_offset_m": [
+      0.0,
+      0.0,
+      -0.005
+    ],
+    "grasp_quat": [
+      0.3492030751478152,
+      0.526875714977375,
+      -0.6406292940598699,
+      -0.4359510303540321
+    ],
+    "use_fixed_grasp_quat": true,
+    "phase_backends": {
+      "approach": "qp_stream",
+      "grasp": "qp_stream",
+      "lift": "qp_stream"
+    },
+    "joint_limits_used": {
+      "shoulder_pitch": [
+        -2.96,
+        2.96
+      ],
+      "shoulder_roll": [
+        -2.616,
+        0.262
+      ],
+      "shoulder_yaw": [
+        -2.96,
+        2.96
+      ],
+      "elbow_pitch": [
+        -2.61,
+        0.261
+      ],
+      "elbow_yaw": [
+        -2.96,
+        2.96
+      ],
+      "wrist_pitch": [
+        -0.785,
+        1.05
+      ],
+      "wrist_roll": [
+        -1.3,
+        1.65
+      ]
+    },
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        0.26613101573592235,
+        -0.3429454412406856,
+        0.04791313982078883
+      ],
+      "achieved_xyz": [
+        0.2914151361834255,
+        -0.36478810884545976,
+        -0.0030805309055532137
+      ],
+      "error_mm": [
+        25.284120447503167,
+        -21.842667604774157,
+        -50.993670726342046
+      ],
+      "error_norm_mm": 60.96509927034558,
+      "achieved_quat": [
+        -0.19913274042232437,
+        -0.4971348176948602,
+        0.7703275420538067,
+        0.3461193474521959
+      ],
+      "approach_axis_tilt_deg": 25.23970692741168,
+      "commanded_approach_axis_tilt_deg": 11.590668908421645,
+      "orientation_error_deg": 25.234257654940414
+    },
+    "approach_joint_limits": {
+      "closest": {
+        "joint": "wrist_pitch",
+        "value": -0.7365,
+        "lower": -0.785,
+        "upper": 1.05,
+        "dist_to_limit": 0.0485,
+        "nearest_side": "lower"
+      },
+      "breached": [
+        {
+          "joint": "wrist_pitch",
+          "value": -0.7365,
+          "lower": -0.785,
+          "upper": 1.05,
+          "dist_to_limit": 0.0485,
+          "nearest_side": "lower"
+        }
+      ],
+      "margin_rad": 0.05
+    },
+    "compliant_insert": {
+      "ok": false,
+      "contact": false,
+      "reason": "joint_limit_abort",
+      "resist_n": 0.02362480847046114,
+      "traveled_m": 0.004769441525454988,
+      "planned_depth_m": 0.03684473751541905,
+      "ft_topic": "/arm_6dof_right",
+      "calib_path": "/home/ubuntu/cheng/compliant_grasp_execute/ft_calibration/ft_calibration_right.json",
+      "calib_present": true,
+      "commanded_m": 0.036000000000000025,
+      "throttle_events": 0
+    },
+    "grasp_tcp_tracking": {
+      "commanded_xyz": [
+        0.2967203517090069,
+        -0.3723844587737586,
+        -0.03366082548860288
+      ],
+      "achieved_xyz": [
+        0.2910020858598822,
+        -0.3645759061105094,
+        -0.002879681490058905
+      ],
+      "error_mm": [
+        -5.718265849124715,
+        7.808552663249202,
+        30.781143998543975
+      ],
+      "error_norm_mm": 32.266869771874404,
+      "achieved_quat": [
+        -0.19836056703582022,
+        -0.4967939918814345,
+        0.7707196391590679,
+        0.3461792207661422
+      ],
+      "approach_axis_tilt_deg": 25.321534462228406,
+      "commanded_approach_axis_tilt_deg": 24.48130796491088,
+      "orientation_error_deg": 8.40284025131257
+    },
+    "grasp_joint_limits": {
+      "closest": {
+        "joint": "wrist_pitch",
+        "value": -0.735,
+        "lower": -0.785,
+        "upper": 1.05,
+        "dist_to_limit": 0.05,
+        "nearest_side": "lower"
+      },
+      "breached": [
+        {
+          "joint": "wrist_pitch",
+          "value": -0.735,
+          "lower": -0.785,
+          "upper": 1.05,
+          "dist_to_limit": 0.05,
+          "nearest_side": "lower"
+        }
+      ],
+      "margin_rad": 0.05
+    },
+    "grasp_reach_retry_used": true,
+    "grasp_reach_retry_yaw_scale": 0.5,
+    "lift_joint_limits": {
+      "closest": {
+        "joint": "wrist_pitch",
+        "value": -0.7365,
+        "lower": -0.785,
+        "upper": 1.05,
+        "dist_to_limit": 0.0485,
+        "nearest_side": "lower"
+      },
+      "breached": [
+        {
+          "joint": "wrist_pitch",
+          "value": -0.7365,
+          "lower": -0.785,
+          "upper": 1.05,
+          "dist_to_limit": 0.0485,
+          "nearest_side": "lower"
+        }
+      ],
+      "margin_rad": 0.05
+    },
+    "retract_ok": null,
+    "return_home_ok": true,
+    "released_on_finish_ok": null,
+    "approach_ok": false,
+    "grasp_ok": false,
+    "lift_ok": true
+  },
+  "detection": {
+    "class_name": "remote control",
+    "pose_head_roll_link": [
+      0.7582573585481485,
+      -0.2740919735605025,
+      -0.296942846657194,
+      -0.2948781588447711,
+      0.06807377187970987,
+      0.9165061448243834,
+      -0.261589983595576
+    ],
+    "pose_tip_waist_yaw_link_rpy": {
+      "x": 0.4293556386541408,
+      "y": -0.2762386735459726,
+      "z": -0.10325216975799134,
+      "roll": -0.04551584888316938,
+      "pitch": -0.027500730908243565,
+      "yaw": -2.591970327204483
+    },
+    "pose_tip_used_for_tcp_conversion_rpy": {
+      "x": 0.4293556386541408,
+      "y": -0.2762386735459726,
+      "z": -0.10325216975799134,
+      "roll": -1.3837404135191227,
+      "pitch": 0.1288267218630854,
+      "yaw": 1.8568700523549886
+    },
+    "pose_tcp_waist_yaw_link_rpy": {
+      "x": 0.2584697624375765,
+      "y": -0.3220207514231357,
+      "z": -0.07005550343520445,
+      "roll": -1.3837404135191227,
+      "pitch": 0.1288267218630854,
+      "yaw": 1.8568700523549886
+    },
+    "pose_tcp_waist_yaw_link_pose7": [
+      0.2584697624375765,
+      -0.3220207514231357,
+      -0.07005550343520445,
+      -0.42110032380007173,
+      -0.48006411580926694,
+      0.6398930336978217,
+      0.4274925349438747
+    ],
+    "current_tcp_pose7": [
+      -0.007811115205557606,
+      -0.36711498455979585,
+      0.09797112629598859,
+      -0.42110032380007173,
+      -0.48006411580926694,
+      0.6398930336978217,
+      0.4274925349438747
+    ],
+    "tcp_minus_tip_waist_m": [
+      -0.17088587621656426,
+      -0.045782077877163097,
+      0.033196666322786894
+    ],
+    "tcp_to_tip_offset_m": [
+      0.0,
+      0.0,
+      -0.18
+    ],
+    "orientation_policy": "current",
+    "use_current_tcp_rotation": true,
+    "rotation_source_arm": "right",
+    "bbox_2d": [
+      813.588134765625,
+      437.95989990234375,
+      975.9490966796875,
+      607.8046264648438
+    ],
+    "bbox_3d": {
+      "min": [
+        0.6977152941887924,
+        -0.3365609244786834,
+        -0.34951465396000303
+      ],
+      "max": [
+        0.8334232585324151,
+        -0.2113310791361998,
+        -0.24740521196276885
+      ],
+      "center": [
+        0.7655692763606037,
+        -0.2739460018074416,
+        -0.29845993296138595
+      ],
+      "size": [
+        0.13570796434362264,
+        0.1252298453424836,
+        0.10210944199723418
+      ]
+    },
+    "object_long_axis_waist": [
+      -0.8523994341551311,
+      -0.5221676982451032,
+      0.027497264617106883
+    ],
+    "object_long_axis_yaw_waist_deg": 31.491039628040113,
+    "object_angle_from_waist_x_deg": 31.4910396280401
+  },
+  "gripper": {
+    "open_ok": true,
+    "close_ok": null,
+    "final_pos_pct": null,
+    "backend": "modbus_rtu"
+  },
+  "ok": false
+}

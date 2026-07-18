@@ -1,0 +1,202 @@
+[mcp] launched at 2026-06-11T20:52:24
+[mcp] phase: grasp
+[mcp] cmd: /usr/bin/python3 -u -m grasp_pose_grasp_execute.main --prompt banana --arm auto --handoff-out /tmp/grasp_handoff.json --no-release-on-finish --dry-run --json-out /home/ubuntu/niu/logs/mcp/grasp_execute/20260611T205224.result.json
+[mcp] cwd: /home/ubuntu/niu
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 119 params from /home/ubuntu/niu/grasp_pose_grasp_execute/config.yaml
+[INFO] [1781182345.069474308] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1781182345.328359230] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1781182345.335591133] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1781182345.342000107] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1781182345.356932526] [XARM_manager]: /joint_action_report 服务已启动
+perception health check pass
+[object_pose] RGB (720, 1280, 3), depth (720, 1280), valid-depth pixels: 836067/921600 (median valid depth 1.251 m)
+[GRASP-EXEC] ARM-SELECT: object waist Y=+0.137m (y >= boundary 0.000) -> 'left' arm
+[GRASP-EXEC] applied grasp tilt +45.0deg about waist Y -> quat=['-0.2294', '0.3262', '0.6764', '-0.6193']
+[GRASP-EXEC] continuous orientation: object long-axis yaw +48.5deg (angle-from-X 48.5deg); applied continuous yaw +15.0deg about waist Z (gain=1.00, clamp +/-15deg) -> quat=['-0.2700', '0.2935', '0.5897', '-0.7022']
+[GRASP-EXEC] recomputed TCP along final quat: detected_tcp_xyz=['0.3720', '0.1412', '-0.1138'] -> consistent_tcp_xyz=['0.4134', '0.1278', '0.1963']
+[GRASP-EXEC] approach along grasp axis: dist=0.120m tool_z=[-0.731,-0.033,0.682] approach_xyz=['0.3358', '0.1489', '0.2681']
+[GRASP-EXEC] applied lift tilt -15.0deg about waist Y -> lift quat=['-0.3447', '0.3826', '0.5494', '-0.6579']
+[GRASP-EXEC] detected class=peach detected_pose7=['0.3720', '0.1412', '-0.1138', '0.6292', '0.5809', '-0.3728', '-0.3573'] -> motion grasp_pose7=['0.4234', '0.1528', '0.1863', '-0.2700', '0.2935', '0.5897', '-0.7022']
+[GRASP-EXEC] dry-run: skip hardware enable and motion execution
+{
+  "arm": "left",
+  "pipeline_version": "accelerated",
+  "motion_strategy": "qp_all",
+  "dry_run": true,
+  "motion": {
+    "detected_pose7": [
+      0.3719774835074029,
+      0.14120250631204936,
+      -0.1137956808542413,
+      0.6291568005055505,
+      0.5809276850767504,
+      -0.3728407204311581,
+      -0.35731574591299753
+    ],
+    "approach_pose7": [
+      0.3357621989699888,
+      0.148861836904888,
+      0.2681306638249652,
+      -0.27003272595940264,
+      0.2934937817959853,
+      0.5897393372785603,
+      -0.7022472791148923
+    ],
+    "grasp_pose7": [
+      0.4234471903029948,
+      0.15283261739414203,
+      0.18630416935503924,
+      -0.27003272595940264,
+      0.2934937817959853,
+      0.5897393372785603,
+      -0.7022472791148923
+    ],
+    "lift_pose7": [
+      0.4234471903029948,
+      0.15283261739414203,
+      0.30630416935503924,
+      -0.34469898865255927,
+      0.38264456514655465,
+      0.5494476920005436,
+      -0.6579308305141072
+    ],
+    "pre_home_pose7": [
+      0.24344719030299483,
+      0.05283261739414202,
+      0.3563041693550392,
+      -0.34469898865255927,
+      0.38264456514655465,
+      0.5494476920005436,
+      -0.6579308305141072
+    ],
+    "grasp_xyz_offset_m": [
+      0.01,
+      0.025,
+      -0.01
+    ],
+    "grasp_quat": [
+      -0.27003272595940264,
+      0.2934937817959853,
+      0.5897393372785603,
+      -0.7022472791148923
+    ],
+    "use_fixed_grasp_quat": true,
+    "phase_backends": {
+      "approach": "qp_stream",
+      "grasp": "qp_stream",
+      "lift": "qp_stream"
+    },
+    "approach_ok": null,
+    "grasp_ok": null,
+    "lift_ok": null
+  },
+  "detection": {
+    "class_name": "peach",
+    "pose_head_roll_link": [
+      0.837460015942946,
+      0.1072696096436821,
+      -0.06116448812636265,
+      0.18531947710930796,
+      0.689384205467957,
+      -0.20614762622501423,
+      -0.6692602370207259
+    ],
+    "pose_tip_waist_yaw_link_rpy": {
+      "x": 0.6107384208022584,
+      "y": 0.13676687349496358,
+      "z": 0.012194556797705869,
+      "roll": -0.5621771005924502,
+      "pitch": -0.7391045556530401,
+      "yaw": 0.8458951095357493
+    },
+    "pose_tip_used_for_tcp_conversion_rpy": {
+      "x": 0.6107384208022584,
+      "y": 0.13676687349496358,
+      "z": 0.012194556797705869,
+      "roll": -2.057044679592519,
+      "pitch": 0.0540276117424916,
+      "yaw": 1.5236845402362094
+    },
+    "pose_tcp_waist_yaw_link_rpy": {
+      "x": 0.3719774835074029,
+      "y": 0.14120250631204936,
+      "z": -0.1137956808542413,
+      "roll": -2.057044679592519,
+      "pitch": 0.0540276117424916,
+      "yaw": 1.5236845402362094
+    },
+    "pose_tcp_waist_yaw_link_pose7": [
+      0.3719774835074029,
+      0.14120250631204936,
+      -0.1137956808542413,
+      0.6291568005055505,
+      0.5809276850767504,
+      -0.3728407204311581,
+      -0.35731574591299753
+    ],
+    "current_tcp_pose7": [
+      0.11831402315007938,
+      -0.240080678455617,
+      0.13998549272653577,
+      0.6291568005055505,
+      0.5809276850767504,
+      -0.3728407204311581,
+      -0.35731574591299753
+    ],
+    "tcp_minus_tip_waist_m": [
+      -0.23876093729485548,
+      0.004435632817085783,
+      -0.12599023765194717
+    ],
+    "tcp_to_tip_offset_m": [
+      0.0,
+      0.0,
+      -0.27
+    ],
+    "orientation_policy": "current",
+    "use_current_tcp_rotation": true,
+    "rotation_source_arm": "right",
+    "bbox_2d": [
+      499.656982421875,
+      287.76318359375,
+      566.1905517578125,
+      357.66455078125
+    ],
+    "bbox_3d": {
+      "min": [
+        0.8245396827736953,
+        0.07454132943946193,
+        -0.0979507743915665
+      ],
+      "max": [
+        0.8629698514407835,
+        0.1444401160308946,
+        -0.02703461981158052
+      ],
+      "center": [
+        0.8437547671072394,
+        0.10949072273517826,
+        -0.06249269710157351
+      ],
+      "size": [
+        0.03843016866708826,
+        0.06989878659143267,
+        0.07091615457998598
+      ]
+    },
+    "object_long_axis_waist": [
+      0.49005022245288965,
+      0.5532434133358256,
+      0.673626383891248
+    ],
+    "object_long_axis_yaw_waist_deg": 48.466219687154904,
+    "object_angle_from_waist_x_deg": 48.466219687154904
+  },
+  "gripper": {
+    "open_ok": null,
+    "close_ok": null
+  }
+}
+[GRASP-EXEC] saved result json: /home/ubuntu/niu/logs/mcp/grasp_execute/20260611T205224.result.json
+[GRASP-EXEC] saved handoff: /tmp/grasp_handoff.json (arm=left holding=False)

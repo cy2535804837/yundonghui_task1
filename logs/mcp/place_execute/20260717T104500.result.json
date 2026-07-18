@@ -1,0 +1,193 @@
+{
+  "ok": false,
+  "dry_run": false,
+  "no_execute_place": false,
+  "transform_mode": "live_tf",
+  "target": {
+    "frame_id": "map",
+    "x": 2.041867,
+    "y": 0.287858,
+    "z": 0.59,
+    "yaw": null,
+    "qx": null,
+    "qy": null,
+    "qz": null,
+    "qw": null,
+    "source": "cli",
+    "raw": null
+  },
+  "robot_pose": {
+    "frame_id": "map",
+    "x": 1.582009,
+    "y": 0.467614,
+    "yaw": -0.001983,
+    "source": "http",
+    "raw": {
+      "pitch": 0,
+      "roll": 0,
+      "x": 1.582009,
+      "y": 0.467614,
+      "yaw": -0.001983,
+      "z": 0
+    }
+  },
+  "waist_target": {
+    "place_x": 0.410198,
+    "place_y": -0.178829,
+    "place_z": -0.13281,
+    "waist_pose7": [
+      0.410198,
+      -0.178829,
+      -0.13281,
+      -0.0,
+      -4.8e-05,
+      0.00101,
+      0.999999
+    ],
+    "transform_mode": "live_tf",
+    "x_base": 0.460213,
+    "y_base": -0.178843,
+    "dx_map": 0.459858,
+    "dy_map": -0.179756
+  },
+  "frames": {
+    "target_frame": "map",
+    "robot_pose_frame": "map",
+    "base_frame": "base_footprint",
+    "waist_frame": "waist_yaw_link"
+  },
+  "place_cli_argv": [
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T104500.result.place.json",
+    "--place-x",
+    "0.410198",
+    "--place-y",
+    "-0.178829",
+    "--place-z",
+    "-0.132810"
+  ],
+  "place_json_out": "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T104500.result.place.json",
+  "place_cmd": [
+    "/usr/bin/python3",
+    "-u",
+    "-m",
+    "grasp_pose_place_execute.main",
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T104500.result.place.json",
+    "--place-x",
+    "0.410198",
+    "--place-y",
+    "-0.178829",
+    "--place-z",
+    "-0.132810"
+  ],
+  "place_exit_code": 0,
+  "place_output_tail": "      0.3262292453010775,\n      -0.6763556988345837,\n      -0.6192630261948527\n    ],\n    \"approach_tcp_tracking\": {\n      \"commanded_xyz\": [\n        0.410198,\n        -0.178829,\n        -0.02281000000000001\n      ],\n      \"achieved_xyz\": [\n        0.4180483596495983,\n        -0.1720374770651713,\n        -0.0076414931071064895\n      ],\n      \"error_mm\": [\n        7.850359649598293,\n        6.791522934828681,\n        15.168506892893522\n      ],\n      \"error_norm_mm\": 18.380330023209684,\n      \"achieved_quat\": [\n        -0.24365390556586963,\n        -0.369798052993318,\n        0.6585450967207658,\n        0.6084410652560251\n      ],\n      \"approach_axis_tilt_deg\": 37.42802577261031,\n      \"commanded_approach_axis_tilt_deg\": 42.99131199460442,\n      \"orientation_error_deg\": 5.770553827846329\n    },\n    \"compliant_place\": {\n      \"ok\": false,\n      \"contact\": false,\n      \"reason\": \"bad_ft_baseline\",\n      \"resist_n\": -17.174030022129116,\n      \"traveled_m\": 0.0,\n      \"planned_depth_m\": 0.09762843806840682,\n      \"ft_topic\": \"/arm_6dof_right\",\n      \"calib_path\": \"/home/ubuntu/cheng/compliant_grasp_execute/ft_calibration/ft_calibration_right.json\",\n      \"calib_present\": true,\n      \"baseline_force_n\": 20.02014634857749\n    },\n    \"place_tcp_tracking\": {\n      \"commanded_xyz\": [\n        0.410198,\n        -0.178829,\n        -0.08281000000000001\n      ],\n      \"achieved_xyz\": [\n        0.42746628719911606,\n        -0.17683004249529913,\n        -0.025809070069411022\n      ],\n      \"error_mm\": [\n        17.26828719911605,\n        1.99895750470086,\n        57.00092993058899\n      ],\n      \"error_norm_mm\": 59.5927477705859,\n      \"achieved_quat\": [\n        -0.32086287745852343,\n        -0.4601199920853497,\n        0.5940890907545123,\n        0.5765368669902136\n      ],\n      \"approach_axis_tilt_deg\": 21.75714208938646,\n      \"commanded_approach_axis_tilt_deg\": 42.99131199460442,\n      \"orientation_error_deg\": 21.433473382603637\n    },\n    \"approach_ok\": true,\n    \"place_ok\": false,\n    \"released_ok\": null,\n    \"lift_ok\": null,\n    \"retract_ok\": null,\n    \"return_home_ok\": true\n  },\n  \"ok\": false\n}\n[PLACE-EXEC] saved result json: /home/ubuntu/cheng/logs/mcp/place_execute/20260717T104500.result.place.json",
+  "place_result": {
+    "arm": "right",
+    "motion_strategy": "qp_all",
+    "dry_run": false,
+    "motion": {
+      "place_pose7": [
+        0.410198,
+        -0.178829,
+        -0.08281,
+        0.229414,
+        0.326229,
+        -0.676356,
+        -0.619263
+      ],
+      "approach_pose7": [
+        0.410198,
+        -0.178829,
+        -0.02281,
+        0.229414,
+        0.326229,
+        -0.676356,
+        -0.619263
+      ],
+      "approach_tcp_tracking": {
+        "commanded_xyz": [
+          0.410198,
+          -0.178829,
+          -0.02281
+        ],
+        "achieved_xyz": [
+          0.418048,
+          -0.172037,
+          -0.007641
+        ],
+        "error_mm": [
+          7.85036,
+          6.791523,
+          15.168507
+        ],
+        "error_norm_mm": 18.38033,
+        "achieved_quat": [
+          -0.243654,
+          -0.369798,
+          0.658545,
+          0.608441
+        ],
+        "approach_axis_tilt_deg": 37.428026,
+        "commanded_approach_axis_tilt_deg": 42.991312,
+        "orientation_error_deg": 5.770554
+      },
+      "compliant_place": {
+        "ok": false,
+        "contact": false,
+        "reason": "bad_ft_baseline",
+        "resist_n": -17.17403,
+        "traveled_m": 0.0,
+        "planned_depth_m": 0.097628,
+        "ft_topic": "/arm_6dof_right",
+        "calib_path": "/home/ubuntu/cheng/compliant_grasp_execute/ft_calibration/ft_calibration_right.json",
+        "calib_present": true,
+        "baseline_force_n": 20.020146
+      },
+      "place_tcp_tracking": {
+        "commanded_xyz": [
+          0.410198,
+          -0.178829,
+          -0.08281
+        ],
+        "achieved_xyz": [
+          0.427466,
+          -0.17683,
+          -0.025809
+        ],
+        "error_mm": [
+          17.268287,
+          1.998958,
+          57.00093
+        ],
+        "error_norm_mm": 59.592748,
+        "achieved_quat": [
+          -0.320863,
+          -0.46012,
+          0.594089,
+          0.576537
+        ],
+        "approach_axis_tilt_deg": 21.757142,
+        "commanded_approach_axis_tilt_deg": 42.991312,
+        "orientation_error_deg": 21.433473
+      },
+      "approach_ok": true,
+      "place_ok": false,
+      "released_ok": null,
+      "lift_ok": null,
+      "retract_ok": null,
+      "return_home_ok": true
+    },
+    "ok": false
+  },
+  "duration_sec": 27.901
+}

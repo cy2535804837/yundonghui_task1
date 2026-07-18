@@ -1,0 +1,159 @@
+# CLI parameters for this module. Keys are argparse dests (the long
+# flag with leading -- removed and dashes turned into underscores).
+# Edit values here instead of typing them on the command line.
+# Explicit command-line flags still override these values.
+# Regenerate with:  python3 -m <module>.main --write-config
+
+acc_scale: 0.2
+# --- compliant (F/T admittance) set-down -------------------------------------
+# Reuses compliant_grasp_execute's admittance stack + F/T calibration so the
+# final descent is soft and STOPS on table/object contact instead of driving
+# into the table. Only the common toggles are listed; every --compliant-* flag
+# is still accepted on the CLI / can be added here.
+compliant_force_deadzone: 0.5        # 必须 < contact_force_n(0.5)
+compliant_contact_debounce: 1        # 默认 3，改 1 更快确认
+compliant_min_insert_m: 0.004
+compliant_max_vel: 0.05
+compliant_place: true
+compliant_place_extra_drop_m: 0.02
+compliant_final_descent_m: 0.06
+compliant_contact_force_n: 1.5
+compliant_max_insert_m: 0.1
+# descent speed of the compliant set-down (faster than the grasp insert: setting
+# an object down on the table tolerates more speed than a delicate pick)
+compliant_insert_speed_mps: 0.02
+compliant_max_lag_m: 0.035
+ft_topic_left: /arm_6dof_left
+ft_topic_right: /arm_6dof_right
+ft_calib_left: ''
+ft_calib_right: ''
+approach_along_axis: false
+approach_dist: 0.12
+approach_extra_z: 0.05
+approach_dx: 0.0
+approach_dy: 0.0
+approach_dz: 0.06
+# Split a large home->place-orientation swing (fixed place orientation can be
+# ~76deg from home) into SLERP hops so each QP approach hop stays under the
+# controller tracking limit (目标超出跟踪限). 0 disables (single-shot approach).
+approach_max_reorient_deg: 35.0
+arm: auto
+dry_run: false
+gripper_activate_on_connect: true
+gripper_async_connect: true
+gripper_backend: modbus_rtu
+gripper_force_activate: false
+gripper_force_pct: 50.0
+gripper_open_pct: 0.0
+gripper_port_cache: /tmp/robotiq_gripper_port.txt
+gripper_recv_timeout_ms: 500
+gripper_serial_port: auto
+gripper_server_get_port: 4245
+gripper_server_ip: 127.0.0.1
+gripper_server_set_port: 4244
+gripper_settle_s: 0.001
+gripper_slave_id: 9
+gripper_speed_pct: 40.0
+gripper_wait_timeout_s: 8.0
+handoff_in: /tmp/grasp_handoff.json
+handoff_out: /tmp/grasp_handoff.json
+# home_left_joints:
+# - 0.7324762344360352
+# - 0.6585812568664551
+# - 0.24663496017456055
+# - -2.487205982208252
+# - -0.898409366607666
+# - -0.43663787841796875
+# - 0.22499990463256836
+# home_right_joints:
+# - 0.7324762344360352
+# - -0.6585812568664551
+# - -0.24663496017456055
+# - -2.487205982208252
+# - 0.898409366607666
+# - -0.43663787841796875
+# - -0.22499990463256836
+# home_left_joints:
+# - 0.844
+# - 0.026
+# - -0.006
+# - -2.216
+# - -1.529
+# - 0.300 #0.039
+# - 0.683
+home_left_joints:
+- 1.389
+- 0.680
+- 0.109
+- -2.020
+- -1.168
+- 0.070 
+- 0.779
+# home_right_joints:
+# - 0.844
+# - -0.026
+# - 0.006
+# - -2.216
+# - 1.529
+# - 0.300 #0.039
+# - -0.683
+home_right_joints:
+- 1.389
+- -0.680
+- -0.109
+- -2.020
+- 1.168
+- 0.070 #0.039
+- -0.779
+json_out: /tmp/place_exec.json
+lift_after_release: true
+lift_tilt_y_deg: -15.0
+lift_z: 0.12
+motion_strategy: qp_all
+moveit_timeout_sec: 120.0
+place_fixed_quat: true
+post_release_tilt_up_deg: 15.0
+place_mid_left_joints:  [  0.258,  0.673,   -0.156,  -2.056,   -1.152,  -0.043,  0.320]
+place_mid_right_joints: [  0.258,  -0.673,   0.156,  -2.056,   1.152,  -0.043,  -0.320]
+place_quat: null
+place_reach_timeout_sec: 20.0
+place_reach_tol_m: 0.03
+place_tilt_y_deg: 45.0
+place_x: null
+place_x_offset: 0.0
+place_y: null
+place_y_offset: 0.0
+place_z: null
+place_z_clearance: 0.06
+place_z_offset: 0.0
+qp_grasp_lookahead_m: 0.03
+qp_grasp_pos_tol_m: 0.01
+qp_lag_guard_m: 0.04
+qp_lookahead_m: 0.08
+qp_otg_p_step: 0.0005
+qp_otg_r_step: 0.0003
+qp_speed_scale: 0.2
+qp_stall_timeout_s: 2.0
+qp_stream_duration: 1.5
+qp_stream_hold_sec: 0.4
+qp_stream_rate_hz: 50.0
+qp_transit_hold_sec: 0.1
+qp_transit_lookahead_m: 0.13
+qp_transit_p_step: 0.002
+qp_transit_pos_tol_m: 0.02
+qp_transit_r_step: 0.008
+qp_transit_raise_z: 0.0
+release_gripper: true
+require_holding: true
+retract_to_approach: true
+return_home: true
+start_home: false
+stream_closed_loop: true
+stream_step_m: 0.005
+stream_waypoint_timeout_s: 0.6
+stream_waypoint_tol_m: 0.004
+use_cartesian_approach: false
+use_cartesian_grasp: false
+use_cartesian_lift: false
+vel_scale: 0.2
+waist_frame: waist_yaw_link

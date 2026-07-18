@@ -1,0 +1,26 @@
+{
+  "requested_height": 0.6,
+  "commanded_height": 0.6,
+  "target_body_pose": [
+    0.05,
+    0.6,
+    0.0,
+    0.0
+  ],
+  "dry_run": false,
+  "ok": true,
+  "body_joints_before": [
+    0.092866,
+    -0.179668,
+    0.086814,
+    -3.6e-05
+  ],
+  "move_result": "eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')",
+  "body_joints_after": [
+    -0.178793,
+    0.367688,
+    -0.188823,
+    -7.2e-05
+  ],
+  "error_codes": []
+}

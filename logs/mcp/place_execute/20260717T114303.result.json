@@ -1,0 +1,96 @@
+{
+  "ok": false,
+  "dry_run": false,
+  "no_execute_place": false,
+  "transform_mode": "live_tf",
+  "target": {
+    "frame_id": "map",
+    "x": 2.041867,
+    "y": 0.287858,
+    "z": 0.59,
+    "yaw": null,
+    "qx": null,
+    "qy": null,
+    "qz": null,
+    "qw": null,
+    "source": "cli",
+    "raw": null
+  },
+  "robot_pose": {
+    "frame_id": "map",
+    "x": 1.590133,
+    "y": 0.468385,
+    "yaw": -0.011917,
+    "source": "http",
+    "raw": {
+      "pitch": 0,
+      "roll": 0,
+      "x": 1.590133,
+      "y": 0.468385,
+      "yaw": -0.011917,
+      "z": 0
+    }
+  },
+  "waist_target": {
+    "place_x": 0.403609,
+    "place_y": -0.175774,
+    "place_z": -0.132455,
+    "waist_pose7": [
+      0.403609,
+      -0.175774,
+      -0.132455,
+      -3e-06,
+      -0.000425,
+      0.005162,
+      0.999987
+    ],
+    "transform_mode": "live_tf",
+    "x_base": 0.453853,
+    "y_base": -0.17513,
+    "dx_map": 0.451734,
+    "dy_map": -0.180527
+  },
+  "frames": {
+    "target_frame": "map",
+    "robot_pose_frame": "map",
+    "base_frame": "base_footprint",
+    "waist_frame": "waist_yaw_link"
+  },
+  "place_cli_argv": [
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T114303.result.place.json",
+    "--place-x",
+    "0.403609",
+    "--place-y",
+    "-0.175774",
+    "--place-z",
+    "-0.132455"
+  ],
+  "place_json_out": "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T114303.result.place.json",
+  "place_cmd": [
+    "/usr/bin/python3",
+    "-u",
+    "-m",
+    "grasp_pose_place_execute.main",
+    "--handoff-in",
+    "/tmp/grasp_handoff.json",
+    "--arm",
+    "auto",
+    "--json-out",
+    "/home/ubuntu/cheng/logs/mcp/place_execute/20260717T114303.result.place.json",
+    "--place-x",
+    "0.403609",
+    "--place-y",
+    "-0.175774",
+    "--place-z",
+    "-0.132455"
+  ],
+  "place_exit_code": 1,
+  "place_output_tail": "[CONFIG] loaded 97 params from /home/ubuntu/cheng/grasp_pose_place_execute/config.yaml\n[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='right' holding=True object=['remote control']\n[INFO] [1784259787.185679549] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...\nTraceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/home/ubuntu/cheng/grasp_pose_place_execute/main.py\", line 1298, in <module>\n    raise SystemExit(main())\n  File \"/home/ubuntu/cheng/grasp_pose_place_execute/main.py\", line 790, in main\n    xarm = XARM_manager()\n  File \"/home/ubuntu/niu/xarm_sdk_v0/xarm_sdk/xarm_sdk/XARM_manager.py\", line 82, in __init__\n    self.run_type = get_node_parameter(self.node, self.controller_manager, 'run_type')\n  File \"/home/ubuntu/niu/xarm_sdk_v0/xarm_sdk/xarm_sdk/tools.py\", line 590, in get_node_parameter\n    response = service_caller(\n  File \"/home/ubuntu/niu/xarm_sdk_v0/xarm_sdk/xarm_sdk/tools.py\", line 234, in service_caller\n    rclpy.spin_until_future_complete(node, future, timeout_sec=call_timeout)\n  File \"/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py\", line 253, in spin_until_future_complete\n    executor.spin_until_future_complete(future, timeout_sec)\n  File \"/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py\", line 310, in spin_until_future_complete\n    self.spin_once_until_future_complete(future, timeout_left)\n  File \"/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py\", line 746, in spin_once_until_future_complete\n    self._spin_once_impl(timeout_sec)\n  File \"/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py\", line 728, in _spin_once_impl\n    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)\n  File \"/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py\", line 711, in wait_for_ready_callbacks\n    return next(self._cb_iter)\n  File \"/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py\", line 612, in _wait_for_ready_callbacks\n    raise ExternalShutdownException()\nrclpy.executors.ExternalShutdownException",
+  "place_result": null,
+  "duration_sec": 14.13
+}

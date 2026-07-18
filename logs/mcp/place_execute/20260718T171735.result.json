@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "dry_run": false,
+  "no_execute_place": false,
+  "transform_mode": "live_tf",
+  "error": "RuntimeError('TF lookup timed out: waist_yaw_link <- base_footprint')",
+  "duration_sec": 3.696
+}

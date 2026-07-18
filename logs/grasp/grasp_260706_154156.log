@@ -1,0 +1,449 @@
+[日志] 日志文件: logs/grasp/grasp_260706_154156.log
+[日志] 执行命令: python3 -m compliant_grasp_execute.main
+[INFO] [1783323716.852568846] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1783323717.309012235] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1783323717.314272216] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1783323717.320432890] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[CONFIG] loaded 198 params from /home/ubuntu/niu/compliant_grasp_execute/config.yaml
+[GRASP-EXEC] STARTUP: enabling arms and moving BOTH to home posture
+[INFO] [1783323717.331239023] [XARM_manager]: /joint_action_report 服务已启动
+[INFO] [1783323720.796657429] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller']
+[GRASP-EXEC] STARTUP: left -> home joints=['0.000', '1.180', '0.000', '-1.300', '1.400', '-0.130', '0.180']
+[INFO] [1783323720.819734382] [XARM_manager]: Activated controllers: ['jointspace_arm_L_controller']
+[INFO] [1783323720.833841443] [XARM_manager]: Sending goal to action server /jointspace_arm_L_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.0, 1.18, 0.0, -1.3, 1.4, -0.13, 0.18])
+[INFO] [1783323720.835839916] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783323720.950256649] [XARM_manager]: Action result received from /jointspace_arm_L_controller/jointspace
+[INFO] [1783323720.950701662] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[GRASP-EXEC] STARTUP: right -> home joints=['0.000', '-1.180', '0.000', '-1.300', '-1.400', '-0.130', '0.180']
+[INFO] [1783323720.963641607] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[INFO] [1783323720.976530136] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.0, -1.18, 0.0, -1.3, -1.4, -0.13, 0.18])
+[INFO] [1783323720.978044595] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783323721.121312180] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1783323721.121793655] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[GRASP-EXEC] STARTUP: activating both grippers (open/close cycle)
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] STARTUP: gripper 'left' activated
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] STARTUP: gripper 'right' activated
+perception health check pass
+[object_pose] RGB (720, 1280, 3), depth (720, 1280), valid-depth pixels: 905802/921600 (median valid depth 1.210 m)
+[GRASP-EXEC] ARM-SELECT: object waist Y=+0.174m (y >= boundary 0.000) -> 'left' arm
+[GRASP-EXEC] applied grasp tilt +45.0deg about waist Y -> quat=['-0.2294', '0.3262', '0.6764', '-0.6193']
+[GRASP-EXEC] continuous orientation: object long-axis yaw +1.9deg (angle-from-X 1.9deg); applied continuous yaw +1.9deg about waist Z (gain=1.00, clamp +/-15deg) -> quat=['-0.2348', '0.3224', '0.6660', '-0.6304']
+[GRASP-EXEC] recomputed TCP along final quat: detected_tcp_xyz=['0.3054', '0.1992', '-0.0400'] -> consistent_tcp_xyz=['0.3782', '0.2093', '0.1602']
+[GRASP-EXEC] approach lateral clamp: approach Y +0.2253 -> +0.2093 (= grasp Y); tool_z outboard component would have pushed the standoff further from center than the grasp, which folds the elbow into its stop at far-outboard reaches.
+[GRASP-EXEC] approach along grasp axis: dist=0.120m tool_z=[-0.719,0.133,0.682] approach_xyz=['0.3119', '0.2093', '0.2470']
+[GRASP-EXEC] applied lift tilt -15.0deg about waist Y -> lift quat=['-0.3197', '0.4019', '0.6297', '-0.5829']
+[GRASP-EXEC] detected class=remote-control detected_pose7=['0.3054', '0.1992', '-0.0400', '0.0056', '-0.7316', '-0.0705', '0.6781'] -> motion grasp_pose7=['0.3982', '0.2093', '0.1652', '-0.2348', '0.3224', '0.6660', '-0.6304']
+[INFO] [1783323724.574199476] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller', 'jointspace_arm_R_controller']
+[GRASP-EXEC] arms enabled (mode 3) [took 0.02s]
+[JOINT-LIMIT] left: using live controller limits from endpose_single_arm_qp_L_controller
+[GRASP-EXEC] joint-limit guard ON (margin 0.050 rad) arm=left
+[GRASP-EXEC] gripper: connecting in background (overlaps arm enable + approach to hide the slow serial open; --no-gripper-async-connect for the old blocking behaviour)
+[GRASP-EXEC] ARM: approach via qp_stream
+[GRASP-EXEC] gripper: arm='left' -> stable by-id port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_DU0E2IPR-if00-port0
+[INFO] [1783323724.610713854] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_L_controller']
+[GRASP-EXEC] QP-Stream left -> approach (pure-pursuit): pos=41.7cm rot=114.2deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] gripper: cached serial port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_DU0E2IPR-if00-port0 -> /tmp/robotiq_gripper_port.txt
+[GRASP-EXEC] gripper controller ready: backend=modbus_rtu port=auto slave=9 (wait_timeout=8.0s) [connect took 0.04s]
+[GRASP-EXEC] approach TCP tracking: commanded=[0.3119,0.2093,0.2470] achieved=[0.3248,0.2187,0.2568] err=[+12.9,+9.4,+9.8]mm |err|=18.7mm approach-axis tilt: achieved=+40.6deg commanded=+43.0deg (0=level) ori-err=4.4deg
+[JOINT-LIMIT] left closest-to-limit: wrist_pitch=0.8591 [-0.785,1.05] dist=0.1909rad
+[JOINT-LIMIT] left approach per-joint: shoulder_pitch=-1.933[-2.96,+2.96](1.027) shoulder_roll=+0.869[-0.26,+2.62](1.131) shoulder_yaw=-2.298[-2.96,+2.96](0.662) elbow_pitch=-2.319[-2.61,+0.26](0.291) elbow_yaw=+1.112[-2.96,+2.96](1.848) wrist_pitch=+0.859[-0.79,+1.05](0.191) wrist_roll=+0.564[-1.65,+1.30](0.736)
+[GRASP-EXEC] GRIPPER: open (after approach, before grasp insert)
+[GRASP-EXEC] gripper open: start=90% -> target=0%
+[GRASP-EXEC] gripper open result: pos=1% status=3 ok=True
+[GRASP-EXEC] ARM: HYBRID pre-descent (position QP-stream) -> 8.8cm, leaving final 3.0cm for F/T compliant descend-to-contact
+[GRASP-EXEC] QP-Stream left -> pre-grasp (pure-pursuit): pos=8.6cm rot=0.0deg, lookahead=8cm @ 50Hz, pos_tol=1.0cm accept=2.5cm keep_ori=True
+[GRASP-EXEC] QP-Stream pre-grasp: ABORT joint-limit guard - 'wrist_pitch'=1.0002 within 0.050rad of limit [-0.785,1.05] (side=upper); holding pose to avoid the hard stop
+[GRASP-EXEC] ARM: COMPLIANT insert to grasp pose (F/T admittance descend-to-contact)
+[INFO] [1783323730.793021746] [XARM_manager]: [COMPLIANT-LEFT] Loaded F/T calibration from /home/ubuntu/niu/compliant_grasp_execute/ft_calibration/ft_calibration_left.json
+[INFO] [1783323730.796237392] [XARM_manager]: [COMPLIANT-LEFT] target set: p=[0.3673736805372768, 0.2129554536789783, 0.17142677898767555] q=[0.22792559144931146, -0.2769522693704643, -0.6822122834050335, 0.6371293162493166]
+[INFO] [1783323730.796946287] [XARM_manager]: [COMPLIANT-LEFT] seeded QP target at captured pose (z=+0.1714).
+[INFO] [1783323730.797509389] [XARM_manager]: [COMPLIANT-LEFT] admittance loop starting (calibrating force offset; keep hands off the arm briefly)...
+[INFO] [1783323731.123143577] [XARM_manager]: [COMPLIANT-LEFT] runtime offset calibrated. p_ref=[0.3673736805372768, 0.2129554536789783, 0.17142677898767555], ready.
+[COMPLIANT-INSERT] runtime force-offset calibrated in 0.34s
+[INFO] [1783323731.142574484] [XARM_manager]: [COMPLIANT-LEFT] gains updated: B=[3.9597979746446663, 5.6, 5.6] K=[20.0, 40.0, 40.0] B_rot=[0.5, 0.5, 0.5] K_rot=[0.0, 0.0, 0.0]
+[COMPLIANT-INSERT] insertion dir=[+0.97,-0.12,-0.20] planned_depth=3.2cm soft_axes=x K=[20.0, 40.0, 40.0] B=[3.96, 5.6, 5.6] contact_thresh=1.5N
+[COMPLIANT-INSERT] ABORT joint-limit guard - 'wrist_pitch'=1.0168 within 0.050rad of limit; holding compliant pose
+[COMPLIANT-INSERT] insert aborted by joint-limit guard after tcp_drop -0.1cm
+[GRASP-EXEC] grasp TCP tracking: commanded=[0.3982,0.2093,0.1652] achieved=[0.3665,0.2139,0.1697] err=[-31.7,+4.6,+4.5]mm |err|=32.4mm approach-axis tilt: achieved=+48.3deg commanded=+43.0deg (0=level) ori-err=6.0deg
+[JOINT-LIMIT] left closest-to-limit: wrist_pitch=1.017 [-0.785,1.05] dist=0.033rad  BREACHED(<= 0.05): wrist_pitch
+[JOINT-LIMIT] left grasp per-joint: shoulder_pitch=-1.241[-2.96,+2.96](1.719) shoulder_roll=+0.850[-0.26,+2.62](1.112) shoulder_yaw=-1.712[-2.96,+2.96](1.248) elbow_pitch=-2.024[-2.61,+0.26](0.586) elbow_yaw=+0.329[-2.96,+2.96](2.631) wrist_pitch=+1.017[-0.79,+1.05](0.033) wrist_roll=-0.110[-1.65,+1.30](1.410)
+[GRASP-EXEC] grasp insert failed to reach target; retrying with reduced long-axis alignment (yaw scale 0.50)
+[GRASP-EXEC] applied grasp tilt +22.5deg about waist Y (tilt scale 0.50) -> quat=['-0.3570', '0.4408', '0.6186', '-0.5437']
+[GRASP-EXEC] continuous orientation: object long-axis yaw +1.9deg (angle-from-X 1.9deg); applied continuous yaw +0.9deg about waist Z (gain=1.00, clamp +/-15deg x scale 0.50) -> quat=['-0.3606', '0.4378', '0.6141', '-0.5488']
+[GRASP-EXEC] recomputed TCP along final quat: detected_tcp_xyz=['0.3054', '0.1992', '-0.0400'] -> consistent_tcp_xyz=['0.3239', '0.2115', '0.0737']
+[GRASP-EXEC] approach lateral clamp: approach Y +0.2286 -> +0.2115 (= grasp Y); tool_z outboard component would have pushed the standoff further from center than the grasp, which folds the elbow into its stop at far-outboard reaches.
+[GRASP-EXEC] approach along grasp axis: dist=0.120m tool_z=[-0.923,0.142,0.357] approach_xyz=['0.2331', '0.2115', '0.1214']
+[GRASP-EXEC] applied lift tilt -15.0deg about waist Y -> lift quat=['-0.4377', '0.5057', '0.5618', '-0.4870']
+[GRASP-EXEC] QP-Stream left -> approach (pure-pursuit): pos=14.2cm rot=27.5deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[GRASP-EXEC] QP-Stream approach: ABORT joint-limit guard - 'wrist_pitch'=1.0183 within 0.050rad of limit [-0.785,1.05] (side=upper); holding pose to avoid the hard stop
+[GRASP-EXEC] approach TCP tracking: commanded=[0.2331,0.2115,0.1214] achieved=[0.3672,0.2142,0.1707] err=[+134.1,+2.7,+49.2]mm |err|=142.8mm approach-axis tilt: achieved=+48.7deg commanded=+20.9deg (0=level) ori-err=27.9deg
+[JOINT-LIMIT] left closest-to-limit: wrist_pitch=1.017 [-0.785,1.05] dist=0.033rad  BREACHED(<= 0.05): wrist_pitch
+[JOINT-LIMIT] left approach per-joint: shoulder_pitch=-1.238[-2.96,+2.96](1.722) shoulder_roll=+0.850[-0.26,+2.62](1.112) shoulder_yaw=-1.703[-2.96,+2.96](1.257) elbow_pitch=-2.019[-2.61,+0.26](0.591) elbow_yaw=+0.313[-2.96,+2.96](2.647) wrist_pitch=+1.017[-0.79,+1.05](0.033) wrist_roll=-0.133[-1.65,+1.30](1.433)
+[INFO] [1783323731.360878216] [XARM_manager]: [COMPLIANT-LEFT] admittance loop stopped.
+[JOINT-LIMIT] left closest-to-limit: wrist_pitch=1.0164 [-0.785,1.05] dist=0.0336rad  BREACHED(<= 0.05): wrist_pitch
+[JOINT-LIMIT] left lift per-joint: shoulder_pitch=-1.236[-2.96,+2.96](1.724) shoulder_roll=+0.849[-0.26,+2.62](1.111) shoulder_yaw=-1.702[-2.96,+2.96](1.258) elbow_pitch=-2.018[-2.61,+0.26](0.592) elbow_yaw=+0.312[-2.96,+2.96](2.648) wrist_pitch=+1.016[-0.79,+1.05](0.034) wrist_roll=-0.136[-1.65,+1.30](1.436)
+[INFO] [1783323731.373271560] [XARM_manager]: Deactivated controllers: ['endpose_single_arm_qp_L_controller']
+[GRASP-EXEC] RETURN HOME: left -> joints=['0.000', '1.180', '0.000', '-1.300', '1.400', '-0.130', '0.180']
+[INFO] [1783323731.392755942] [XARM_manager]: Activated controllers: ['jointspace_arm_L_controller']
+[INFO] [1783323731.393850088] [XARM_manager]: Sending goal to action server /jointspace_arm_L_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.0, 1.18, 0.0, -1.3, 1.4, -0.13, 0.18])
+[INFO] [1783323731.395478471] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783323733.437818603] [XARM_manager]: Action result received from /jointspace_arm_L_controller/jointspace
+[INFO] [1783323733.438274716] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[GRASP-EXEC] return home result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+{
+  "arm": "left",
+  "pipeline_version": "accelerated",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "detected_pose7": [
+      0.3053972626444707,
+      0.1992082640331745,
+      -0.039959349130166466,
+      0.005617747620781146,
+      -0.7315930355534118,
+      -0.07053217628149505,
+      0.6780599408241204
+    ],
+    "approach_pose7": [
+      0.233075839020097,
+      0.21153174622606358,
+      0.1214475627993566,
+      -0.36058765208662014,
+      0.4378072763054915,
+      0.6140875557096207,
+      -0.5488149122420137
+    ],
+    "grasp_pose7": [
+      0.3438856514553267,
+      0.21153174622606358,
+      0.07865524264496644,
+      -0.36058765208662014,
+      0.4378072763054915,
+      0.6140875557096207,
+      -0.5488149122420137
+    ],
+    "lift_pose7": [
+      0.3438856514553267,
+      0.21153174622606358,
+      0.19865524264496642,
+      -0.4376572850726224,
+      0.5056964950936753,
+      0.5617678183534718,
+      -0.4869744078852754
+    ],
+    "pre_home_pose7": [
+      0.1638856514553267,
+      0.11153174622606357,
+      0.2486552426449664,
+      -0.4376572850726224,
+      0.5056964950936753,
+      0.5617678183534718,
+      -0.4869744078852754
+    ],
+    "grasp_xyz_offset_m": [
+      0.02,
+      0.0,
+      0.005
+    ],
+    "grasp_quat": [
+      -0.36058765208662014,
+      0.4378072763054915,
+      0.6140875557096207,
+      -0.5488149122420137
+    ],
+    "use_fixed_grasp_quat": true,
+    "phase_backends": {
+      "approach": "qp_stream",
+      "grasp": "qp_stream",
+      "lift": "qp_stream"
+    },
+    "joint_limits_used": {
+      "shoulder_pitch": [
+        -2.96,
+        2.96
+      ],
+      "shoulder_roll": [
+        -0.262,
+        2.616
+      ],
+      "shoulder_yaw": [
+        -2.96,
+        2.96
+      ],
+      "elbow_pitch": [
+        -2.61,
+        0.261
+      ],
+      "elbow_yaw": [
+        -2.96,
+        2.96
+      ],
+      "wrist_pitch": [
+        -0.785,
+        1.05
+      ],
+      "wrist_roll": [
+        -1.65,
+        1.3
+      ]
+    },
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        0.233075839020097,
+        0.21153174622606358,
+        0.1214475627993566
+      ],
+      "achieved_xyz": [
+        0.367154742635629,
+        0.2142353577890633,
+        0.1706573503656215
+      ],
+      "error_mm": [
+        134.078903615532,
+        2.7036115629997246,
+        49.209787566264886
+      ],
+      "error_norm_mm": 142.84979909871635,
+      "achieved_quat": [
+        0.22701169834702106,
+        -0.27032762683013306,
+        -0.6830502453669192,
+        0.6393989562786139
+      ],
+      "approach_axis_tilt_deg": 48.65775719674753,
+      "commanded_approach_axis_tilt_deg": 20.89170020919751,
+      "orientation_error_deg": 27.86819105465815
+    },
+    "approach_joint_limits": {
+      "closest": {
+        "joint": "wrist_pitch",
+        "value": 1.017,
+        "lower": -0.785,
+        "upper": 1.05,
+        "dist_to_limit": 0.033,
+        "nearest_side": "upper"
+      },
+      "breached": [
+        {
+          "joint": "wrist_pitch",
+          "value": 1.017,
+          "lower": -0.785,
+          "upper": 1.05,
+          "dist_to_limit": 0.033,
+          "nearest_side": "upper"
+        }
+      ],
+      "margin_rad": 0.05
+    },
+    "compliant_insert": {
+      "ok": false,
+      "contact": false,
+      "reason": "joint_limit_abort",
+      "resist_n": -4.24161139692444,
+      "traveled_m": -0.0006479956815896205,
+      "planned_depth_m": 0.03167845856635583,
+      "ft_topic": "/arm_6dof_left",
+      "calib_path": "/home/ubuntu/niu/compliant_grasp_execute/ft_calibration/ft_calibration_left.json",
+      "calib_present": true,
+      "commanded_m": 0.032499999999999994,
+      "throttle_events": 0
+    },
+    "grasp_tcp_tracking": {
+      "commanded_xyz": [
+        0.3982123468823694,
+        0.20928236418128546,
+        0.16518099571107078
+      ],
+      "achieved_xyz": [
+        0.36647624097919995,
+        0.21393007740024528,
+        0.16970910573106757
+      ],
+      "error_mm": [
+        -31.73610590316944,
+        4.6477132189598205,
+        4.528110019996784
+      ],
+      "error_norm_mm": 32.39267566003271,
+      "achieved_quat": [
+        0.22802700984698196,
+        -0.27340560009220694,
+        -0.6822678754427911,
+        0.6385637061071078
+      ],
+      "approach_axis_tilt_deg": 48.288626950142806,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 6.038624333125382
+    },
+    "grasp_joint_limits": {
+      "closest": {
+        "joint": "wrist_pitch",
+        "value": 1.017,
+        "lower": -0.785,
+        "upper": 1.05,
+        "dist_to_limit": 0.033,
+        "nearest_side": "upper"
+      },
+      "breached": [
+        {
+          "joint": "wrist_pitch",
+          "value": 1.017,
+          "lower": -0.785,
+          "upper": 1.05,
+          "dist_to_limit": 0.033,
+          "nearest_side": "upper"
+        }
+      ],
+      "margin_rad": 0.05
+    },
+    "grasp_reach_retry_used": true,
+    "grasp_reach_retry_yaw_scale": 0.5,
+    "lift_joint_limits": {
+      "closest": {
+        "joint": "wrist_pitch",
+        "value": 1.0164,
+        "lower": -0.785,
+        "upper": 1.05,
+        "dist_to_limit": 0.0336,
+        "nearest_side": "upper"
+      },
+      "breached": [
+        {
+          "joint": "wrist_pitch",
+          "value": 1.0164,
+          "lower": -0.785,
+          "upper": 1.05,
+          "dist_to_limit": 0.0336,
+          "nearest_side": "upper"
+        }
+      ],
+      "margin_rad": 0.05
+    },
+    "retract_ok": null,
+    "return_home_ok": true,
+    "released_on_finish_ok": null,
+    "approach_ok": false,
+    "grasp_ok": false,
+    "lift_ok": true
+  },
+  "detection": {
+    "class_name": "remote-control",
+    "pose_head_roll_link": [
+      0.8212688618964135,
+      0.18067455695707227,
+      -0.11681668518433218,
+      -0.39163236602001245,
+      0.08920946554561408,
+      0.9157147690070057,
+      0.011498824508591425
+    ],
+    "pose_tip_waist_yaw_link_rpy": {
+      "x": 0.5695140690200858,
+      "y": 0.17378309062926545,
+      "z": -0.02120106703059843,
+      "roll": 0.1753755653047608,
+      "pitch": 0.1061340968867206,
+      "yaw": -3.108526838055874
+    },
+    "pose_tip_used_for_tcp_conversion_rpy": {
+      "x": 0.5695140690200858,
+      "y": 0.17378309062926545,
+      "z": -0.02120106703059843,
+      "roll": 2.137512799647243,
+      "pitch": -1.439060646803899,
+      "yaw": -2.2295476511620573
+    },
+    "pose_tcp_waist_yaw_link_rpy": {
+      "x": 0.3053972626444707,
+      "y": 0.1992082640331745,
+      "z": -0.039959349130166466,
+      "roll": 2.137512799647243,
+      "pitch": -1.439060646803899,
+      "yaw": -2.2295476511620573
+    },
+    "pose_tcp_waist_yaw_link_pose7": [
+      0.3053972626444707,
+      0.1992082640331745,
+      -0.039959349130166466,
+      0.005617747620781146,
+      -0.7315930355534118,
+      -0.07053217628149505,
+      0.6780599408241204
+    ],
+    "current_tcp_pose7": [
+      0.3516879568539584,
+      -0.5953155352899084,
+      0.275048489435275,
+      0.005617747620781146,
+      -0.7315930355534118,
+      -0.07053217628149505,
+      0.6780599408241204
+    ],
+    "tcp_minus_tip_waist_m": [
+      -0.26411680637561513,
+      0.02542517340390904,
+      -0.018758282099568035
+    ],
+    "tcp_to_tip_offset_m": [
+      0.0,
+      0.0,
+      -0.266
+    ],
+    "orientation_policy": "current",
+    "use_current_tcp_rotation": true,
+    "rotation_source_arm": "right",
+    "bbox_2d": [
+      467.831787109375,
+      263.9241943359375,
+      513.4799194335938,
+      431.991943359375
+    ],
+    "bbox_3d": {
+      "min": [
+        0.7639889227269353,
+        0.1565809248754093,
+        -0.18113331627016618
+      ],
+      "max": [
+        0.8927632691524787,
+        0.2125499127579487,
+        -0.0508456521284425
+      ],
+      "center": [
+        0.8283760959397071,
+        0.184565418816679,
+        -0.11598948419930434
+      ],
+      "size": [
+        0.12877434642554342,
+        0.0559689878825394,
+        0.13028766414172369
+      ]
+    },
+    "object_long_axis_waist": [
+      -0.9938295132935687,
+      -0.03287376505558008,
+      -0.10593495210618115
+    ],
+    "object_long_axis_yaw_waist_deg": 1.8945316762517166,
+    "object_angle_from_waist_x_deg": 1.894531676251706
+  },
+  "gripper": {
+    "open_ok": true,
+    "close_ok": null,
+    "final_pos_pct": null,
+    "backend": "modbus_rtu"
+  },
+  "ok": false
+}
+[GRASP-EXEC] saved result json: /tmp/grasp_exec.json
+[GRASP-EXEC] saved handoff: /tmp/grasp_handoff.json (arm=left holding=False)
+
+

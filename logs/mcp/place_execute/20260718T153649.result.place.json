@@ -1,0 +1,73 @@
+{
+  "arm": "right",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      0.404543,
+      -0.170029,
+      0.045235,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      0.404543,
+      -0.170029,
+      0.105235,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "compliant_place": {
+      "ok": true,
+      "contact": true,
+      "reason": "contact",
+      "resist_n": 1.7410440361410713,
+      "traveled_m": 0.04045963359286825,
+      "planned_depth_m": 0.09432095991597954,
+      "ft_topic": "/arm_6dof_right",
+      "calib_path": "/home/ubuntu/cheng/compliant_grasp_execute/ft_calibration/ft_calibration_right.json",
+      "calib_present": true,
+      "commanded_m": 0.07195963359286825,
+      "throttle_events": 0,
+      "contact_kind": "force"
+    },
+    "place_tcp_tracking": {
+      "commanded_xyz": [
+        0.404543,
+        -0.170029,
+        0.045235
+      ],
+      "achieved_xyz": [
+        0.4071982990790559,
+        -0.16914414147446236,
+        0.08090801967142403
+      ],
+      "error_mm": [
+        2.6552990790559283,
+        0.8848585255376573,
+        35.67301967142403
+      ],
+      "error_norm_mm": 35.78264831293594,
+      "achieved_quat": [
+        -0.24015523907683395,
+        -0.3513841180927396,
+        0.6540429531839025,
+        0.6253658753774594
+      ],
+      "approach_axis_tilt_deg": 39.621220963609595,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 4.105167910008865
+    },
+    "approach_ok": true,
+    "place_ok": true,
+    "released_ok": true,
+    "lift_ok": null,
+    "retract_ok": true,
+    "return_home_ok": true
+  },
+  "ok": true
+}

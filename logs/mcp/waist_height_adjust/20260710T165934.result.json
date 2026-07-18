@@ -1,0 +1,32 @@
+{
+  "requested_height": 0.565309,
+  "commanded_height": 0.565309,
+  "target_body_pose": [
+    0.05,
+    0.565309,
+    0.0,
+    0.0
+  ],
+  "dry_run": false,
+  "ok": false,
+  "body_joints_before": [
+    -0.193018,
+    0.396786,
+    -0.20372,
+    -4.8e-05
+  ],
+  "move_result": "None",
+  "body_joints_after": [
+    -0.193138,
+    0.396894,
+    -0.203588,
+    -4.8e-05
+  ],
+  "error_codes": [
+    600101,
+    600101,
+    600101
+  ],
+  "hint": "the body controller REJECTED the goal (the arm did not move). This height (0.565 m) is almost certainly OUTSIDE the reachable range: the commanded z maps to a leg-pitch joint past its limit (error 600101 '指令超上限位' = command over the UPPER joint limit -> the waist is being asked to go LOWER than it mechanically can). Try a height closer to the ~0.68 m nominal (e.g. raise it in 1-2 cm steps to find the floor).",
+  "moved": false
+}

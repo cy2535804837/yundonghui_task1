@@ -1,0 +1,66 @@
+# CLI parameters for world_place_execute.main.
+# Explicit command-line flags override these values.
+
+# Target-place HTTP interface:
+#   GET target_url -> JSON object:
+#     {
+#       "x": 1.23,
+#       "y": 0.45,
+#       "z": 0.75
+#     }
+# x/y/z are metres. The coordinate frame is target_frame below, unless the
+# response optionally includes "frame_id" or "frame".
+target_url: ''
+target_timeout_sec: 3.0
+
+# Robot SLAM pose HTTP interface:
+#   GET robot_pose_url -> JSON object:
+#     {"x": 1.0, "y": 2.0, "yaw": 0.5}
+# x/y are metres, yaw is radians, in robot_pose_frame.
+robot_pose_url: http://192.168.41.6:1448/api/core/slam/v1/localization/pose
+robot_pose_timeout_sec: 3.0
+robot_pose_frame: map
+
+# Optional direct robot pose for offline/debug. If all three are provided, the
+# robot_pose_url is not called.
+robot_x: null
+robot_y: null
+robot_yaw: null
+
+# Coordinate transform mode. true = use ROS TF for base_frame -> waist_frame.
+# false = offline/debug approximation: waist_yaw_link ~= mobile-base centre.
+use_live_waist_tf: true
+waist_frame: waist_yaw_link
+base_frame: base_footprint
+tf_timeout_sec: 3.0
+
+# Optional direct target for dry-run/debug. If target_url is empty, all three
+# target_x/y/z must be provided.
+target_x: null
+target_y: null
+target_z: null
+target_yaw: null
+# Coordinate frame for target_url and direct target_x/y/z when the target data
+# does not include an explicit frame_id/frame. This must match robot_pose_frame.
+target_frame: map
+target_quat: null
+
+# Approximation fallback only (--no-use-live-waist-tf):
+#   waist_z_in_map is subtracted from the target map/world Z.
+waist_z_in_map: 0.0
+place_z_offset: 0.0
+
+# Existing place node options forwarded after conversion.
+handoff_in: /tmp/grasp_handoff.json
+arm: auto
+motion_strategy: null
+place_z_clearance: null
+place_tilt_y_deg: null
+require_holding: null
+place_extra_args: []
+timeout_sec: 600.0
+
+# Run modes / outputs.
+dry_run: false
+no_execute_place: false
+json_out: /tmp/world_place_exec.json

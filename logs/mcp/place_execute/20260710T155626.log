@@ -1,0 +1,210 @@
+[mcp] launched at 2026-07-10T15:56:26
+[mcp] cmd: /usr/bin/python3 -u -m grasp_pose_place_execute.main --handoff-in /tmp/grasp_handoff.json --arm auto --json-out /home/ubuntu/niu/logs/mcp/place_execute/20260710T155626.result.json
+[mcp] cwd: /home/ubuntu/niu
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 92 params from /home/ubuntu/niu/grasp_pose_place_execute/config.yaml
+[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='left' holding=True object=['remote control']
+[INFO] [1783670186.889599495] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1783670187.689109959] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1783670187.696220263] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1783670187.701793067] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1783670187.711971762] [XARM_manager]: /joint_action_report 服务已启动
+[PLACE-EXEC] applied place tilt +45.0deg about waist Y -> quat=['-0.2294', '0.3262', '0.6764', '-0.6193']
+[PLACE-EXEC] place TCP target (waist) from handoff grasp_pose7 (original detected grasp position): x=0.5065 y=0.3461 z=0.2111 (+5cm release clearance)
+[PLACE-EXEC] approach along place axis: dist=0.120m extra_z=0.050m tool_z=[-0.714,0.157,0.682] approach_xyz=['0.4207', '0.3650', '0.3429']
+[INFO] [1783670191.868210600] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller']
+[PLACE-EXEC] arms enabled (mode 3); placing with 'left' arm
+[PLACE-EXEC] gripper: connecting in background (overlaps approach)
+[GRASP-EXEC] gripper: arm='left' -> stable by-id port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_DU0E2IPR-if00-port0
+[INFO] [1783670191.889339165] [XARM_manager]: Deactivated controllers: []
+[PLACE-EXEC] START HOME: left -> joints=['0.844', '0.026', '-0.006', '-2.216', '-1.529', '0.300', '0.683']
+[INFO] [1783670191.904988580] [XARM_manager]: Activated controllers: ['jointspace_arm_L_controller']
+[INFO] [1783670191.920527253] [XARM_manager]: Sending goal to action server /jointspace_arm_L_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, 0.026, -0.006, -2.216, -1.529, 0.3, 0.683])
+[INFO] [1783670191.922310193] [XARM_manager]: Goal accepted. Waiting for result...
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] gripper: cached serial port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_DU0E2IPR-if00-port0 -> /tmp/robotiq_gripper_port.txt
+[GRASP-EXEC] gripper controller ready: backend=modbus_rtu port=auto slave=9 (wait_timeout=8.0s) [connect took 0.05s]
+[INFO] [1783670192.382241757] [XARM_manager]: Action result received from /jointspace_arm_L_controller/jointspace
+[INFO] [1783670192.382779201] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] START HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[INFO] [1783670192.395180885] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller']
+[WARN] [1783670193.030470070] [XARM_manager]: TF查找超时: waist_yaw_link <- left_tcp_link, 超时0.5s
+[PLACE-EXEC] TF warmup ok: read TCP after 2 attempt(s)
+[PLACE-EXEC] ARM: approach to middle waypoint
+[INFO] [1783670193.048636335] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_L_controller']
+[GRASP-EXEC] QP-Stream left -> approach (pure-pursuit): pos=38.1cm rot=76.4deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[GRASP-EXEC] approach TCP tracking: commanded=[0.4207,0.3650,0.3429] achieved=[0.4140,0.3481,0.3396] err=[-6.8,-16.9,-3.3]mm |err|=18.5mm approach-axis tilt: achieved=+44.2deg commanded=+43.0deg (0=level) ori-err=4.2deg
+[PLACE-EXEC] ARM: HYBRID pre-descent (QP, fast transit) -> 9.8cm, leaving final 6.0cm for F/T compliant set-down
+[GRASP-EXEC] QP-Stream left -> approach (pure-pursuit): pos=9.8cm rot=0.0deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=True
+[PLACE-EXEC] ARM: COMPLIANT set-down (F/T admittance descend-to-contact)
+[INFO] [1783670196.496337559] [XARM_manager]: [COMPLIANT-LEFT] Loaded F/T calibration from /home/ubuntu/niu/compliant_grasp_execute/ft_calibration/ft_calibration_left.json
+[INFO] [1783670196.517378410] [XARM_manager]: [COMPLIANT-LEFT] target set: p=[0.45793353149947746, 0.35003110270248183, 0.27015215923863484] q=[0.23969190731668844, -0.29942946314893315, -0.7281975048535375, 0.5679948768169584]
+[INFO] [1783670196.518070828] [XARM_manager]: [COMPLIANT-LEFT] seeded QP target at captured pose (z=+0.2702).
+[INFO] [1783670196.519291006] [XARM_manager]: [COMPLIANT-LEFT] admittance loop starting (calibrating force offset; keep hands off the arm briefly)...
+[INFO] [1783670196.861805129] [XARM_manager]: [COMPLIANT-LEFT] runtime offset calibrated. p_ref=[0.45793353149947746, 0.35003110270248183, 0.27015215923863484], ready.
+[COMPLIANT-INSERT] runtime force-offset calibrated in 0.34s
+[INFO] [1783670196.866259666] [XARM_manager]: [COMPLIANT-LEFT] gains updated: B=[3.9597979746446663, 5.6, 3.9597979746446663] K=[20.0, 40.0, 20.0] B_rot=[0.5, 0.5, 0.5] K_rot=[0.0, 0.0, 0.0]
+[COMPLIANT-INSERT] insertion dir=[+0.61,-0.04,-0.79] planned_depth=12.6cm soft_axes=xz K=[20.0, 40.0, 20.0] B=[3.96, 5.6, 3.96] contact_thresh=1.5N
+[INFO] [1783670197.690800898] [XARM_manager]: [COMPLIANT-LEFT] n=200 hz=241.9 F=[+0.00,+0.00,+0.00]N disp=[-2.1,+0.1,+2.3]cm v=[+0.11,-0.01,-0.12]
+[COMPLIANT-INSERT] insert s=6.0cm tcp_drop=2.8cm lag=+3.0cm resist=+0.17N (throttle x0)
+[INFO] [1783670198.523060852] [XARM_manager]: [COMPLIANT-LEFT] n=400 hz=241.0 F=[+0.00,+0.00,+0.00]N disp=[-1.8,+0.2,+2.6]cm v=[+0.09,-0.01,-0.13]
+[COMPLIANT-INSERT] insert s=8.5cm tcp_drop=5.4cm lag=+3.1cm resist=+0.25N (throttle x0)
+[INFO] [1783670199.361531767] [XARM_manager]: [COMPLIANT-LEFT] n=600 hz=239.9 F=[+0.00,+0.00,+0.00]N disp=[-1.5,+0.1,+2.8]cm v=[+0.08,-0.01,-0.13]
+[COMPLIANT-INSERT] insert s=10.8cm tcp_drop=7.7cm lag=+3.1cm resist=+0.22N (throttle x0)
+[INFO] [1783670200.194180601] [XARM_manager]: [COMPLIANT-LEFT] n=800 hz=241.0 F=[+0.00,+0.00,+0.00]N disp=[-1.1,+0.0,+3.1]cm v=[+0.06,-0.00,-0.16]
+[COMPLIANT-INSERT] insert s=13.0cm tcp_drop=9.8cm lag=+3.1cm resist=+0.12N (throttle x0)
+[INFO] [1783670201.034158692] [XARM_manager]: [COMPLIANT-LEFT] n=1000 hz=239.5 F=[+0.00,+0.00,+0.00]N disp=[-0.8,-0.1,+3.4]cm v=[+0.04,+0.01,-0.17]
+[INFO] [1783670201.663363917] [XARM_manager]: [COMPLIANT-LEFT] gains updated: B=[10.844353369380768, 10.844353369380768, 10.844353369380768] K=[150.0, 150.0, 150.0] B_rot=[0.5, 0.5, 0.5] K_rot=[0.0, 0.0, 0.0]
+[INFO] [1783670201.663944118] [XARM_manager]: [COMPLIANT-LEFT] target set: p=[0.541256775161598, 0.3431381174347169, 0.19068999214928264] q=[0.23969190731668844, -0.29942946314893315, -0.7281975048535375, 0.5679948768169584]
+[COMPLIANT-INSERT] CONTACT (force) at tcp_drop 11.4cm (resist 3.5N, thresh 1.5N); holding compliant for gripper close
+[GRASP-EXEC] place TCP tracking: commanded=[0.5065,0.3461,0.2111] achieved=[0.5435,0.3425,0.1967] err=[+37.1,-3.6,-14.4]mm |err|=39.9mm approach-axis tilt: achieved=+42.0deg commanded=+43.0deg (0=level) ori-err=8.3deg
+[PLACE-EXEC] GRIPPER: release (open) at place pose
+[GRASP-EXEC] gripper release: start=90% -> target=0%
+[INFO] [1783670201.875770316] [XARM_manager]: [COMPLIANT-LEFT] n=1200 hz=239.1 F=[-1.47,+0.00,+12.84]N disp=[+0.2,-0.1,+0.6]cm v=[-0.19,+0.01,+0.20]
+[INFO] [1783670202.711427536] [XARM_manager]: [COMPLIANT-LEFT] n=1400 hz=240.0 F=[-0.09,-0.15,-0.77]N disp=[+0.1,-0.4,+1.2]cm v=[-0.05,+0.05,-0.20]
+[GRASP-EXEC] gripper release result: pos=1% status=3 ok=True
+[INFO] [1783670202.722211500] [XARM_manager]: [COMPLIANT-LEFT] admittance loop stopped.
+[PLACE-EXEC] ARM: post-release nose-up 15deg about waist Y (lift fingertips off the table before retract)
+[GRASP-EXEC] QP-Stream left -> retract (pure-pursuit): pos=0.2cm rot=15.5deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+[PLACE-EXEC] ARM: retract to pre-insert standoff (keep orientation)
+[GRASP-EXEC] QP-Stream left -> retract (pure-pursuit): pos=18.8cm rot=0.0deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=True
+[GRASP-EXEC] retract TCP tracking: commanded=[0.4207,0.3650,0.3429] achieved=[0.4271,0.3686,0.3255] err=[+6.3,+3.6,-17.4]mm |err|=18.9mm approach-axis tilt: achieved=+46.2deg commanded=+43.0deg (0=level) ori-err=10.0deg
+[INFO] [1783670204.812612145] [XARM_manager]: Deactivated controllers: ['endpose_single_arm_qp_L_controller']
+[PLACE-EXEC] RETURN HOME: left -> joints=['0.844', '0.026', '-0.006', '-2.216', '-1.529', '0.300', '0.683']
+[INFO] [1783670204.831287374] [XARM_manager]: Activated controllers: ['jointspace_arm_L_controller']
+[INFO] [1783670204.832214521] [XARM_manager]: Sending goal to action server /jointspace_arm_L_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, 0.026, -0.006, -2.216, -1.529, 0.3, 0.683])
+[INFO] [1783670204.833522561] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783670207.152093210] [XARM_manager]: Action result received from /jointspace_arm_L_controller/jointspace
+[INFO] [1783670207.152382274] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] RETURN HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+{
+  "arm": "left",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      0.5064682644887076,
+      0.3461157361825601,
+      0.21108460853904232,
+      -0.22941393277711944,
+      0.3262292453010775,
+      0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      0.4207433531676836,
+      0.3649748024840963,
+      0.34291110300896827,
+      -0.22941393277711944,
+      0.3262292453010775,
+      0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        0.4207433531676836,
+        0.3649748024840963,
+        0.34291110300896827
+      ],
+      "achieved_xyz": [
+        0.413954579616171,
+        0.3480657078255493,
+        0.33959545733863683
+      ],
+      "error_mm": [
+        -6.788773551512584,
+        -16.90909465854701,
+        -3.315645670331435
+      ],
+      "error_norm_mm": 18.52021691872445,
+      "achieved_quat": [
+        0.22153233655881951,
+        -0.3202927494128421,
+        -0.7025406149389536,
+        0.5956279567763332
+      ],
+      "approach_axis_tilt_deg": 44.16060076345496,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 4.197521661182504
+    },
+    "compliant_place": {
+      "ok": true,
+      "contact": true,
+      "reason": "contact",
+      "resist_n": 3.5280626579967613,
+      "traveled_m": 0.11407879640484687,
+      "planned_depth_m": 0.12646570844075494,
+      "ft_topic": "/arm_6dof_left",
+      "calib_path": "/home/ubuntu/niu/compliant_grasp_execute/ft_calibration/ft_calibration_left.json",
+      "calib_present": true,
+      "commanded_m": 0.14461099202494376,
+      "throttle_events": 0,
+      "contact_kind": "force"
+    },
+    "place_tcp_tracking": {
+      "commanded_xyz": [
+        0.5064682644887076,
+        0.3461157361825601,
+        0.21108460853904232
+      ],
+      "achieved_xyz": [
+        0.5435335160779926,
+        0.3425345876818687,
+        0.19673395669281427
+      ],
+      "error_mm": [
+        37.065251589284976,
+        -3.581148500691411,
+        -14.350651846228052
+      ],
+      "error_norm_mm": 39.90737661601732,
+      "achieved_quat": [
+        0.25158811888689336,
+        -0.31991149947673353,
+        -0.7178862212240432,
+        0.5648003402213622
+      ],
+      "approach_axis_tilt_deg": 41.96835834880829,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 8.283036985435036
+    },
+    "retract_tcp_tracking": {
+      "commanded_xyz": [
+        0.4207433531676836,
+        0.3649748024840963,
+        0.34291110300896827
+      ],
+      "achieved_xyz": [
+        0.42708693051664354,
+        0.36858500008694145,
+        0.3254653874928814
+      ],
+      "error_mm": [
+        6.343577348959961,
+        3.6101976028451443,
+        -17.445715516086867
+      ],
+      "error_norm_mm": 18.911041488560613,
+      "achieved_quat": [
+        0.22892990075034012,
+        -0.2949392021792089,
+        -0.7365886376491856,
+        0.5639495956612154
+      ],
+      "approach_axis_tilt_deg": 46.153969209184275,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 10.036930050842281
+    },
+    "approach_ok": true,
+    "place_ok": true,
+    "released_ok": true,
+    "lift_ok": null,
+    "retract_ok": true,
+    "return_home_ok": true
+  },
+  "ok": true
+}
+[PLACE-EXEC] saved result json: /home/ubuntu/niu/logs/mcp/place_execute/20260710T155626.result.json
+[PLACE-EXEC] updated handoff: /tmp/grasp_handoff.json (holding=false, placed=true)

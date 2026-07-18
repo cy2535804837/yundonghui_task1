@@ -1,0 +1,5 @@
+[日志] 日志文件: logs/grasp/grasp_260708_133214.log
+[日志] 执行命令: python3 -m grasp_pose_place_execute.main
+[CONFIG] loaded 91 params from /home/ubuntu/niu/grasp_pose_place_execute/config.yaml
+[PLACE-EXEC] handoff says the gripper is NOT holding an object (holding=false). Run grasp with --no-release-on-finish, or pass --no-require-holding to place anyway.
+[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='right' holding=False object=['remote-control']

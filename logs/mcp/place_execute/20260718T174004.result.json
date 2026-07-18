@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "dry_run": false,
+  "no_execute_place": false,
+  "transform_mode": "live_tf",
+  "error": "RuntimeError(\"failed to GET robot pose URL 'http://192.168.41.6:1448/api/core/slam/v1/localization/pose': <urlopen error timed out>\")",
+  "duration_sec": 3.005
+}

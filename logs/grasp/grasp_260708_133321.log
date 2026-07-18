@@ -1,0 +1,614 @@
+[日志] 日志文件: logs/grasp/grasp_260708_133321.log
+[日志] 执行命令: python3 -m grasp_pose_place_execute.main
+[CONFIG] loaded 91 params from /home/ubuntu/niu/grasp_pose_place_execute/config.yaml
+[PLACE-EXEC] ARM: handoff /tmp/grasp_handoff.json -> arm='right' holding=True object=['remote-control']
+[INFO] [1783488801.843405201] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1783488802.332621710] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1783488802.337704785] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1783488802.342456535] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1783488802.353154931] [XARM_manager]: /joint_action_report 服务已启动
+[PLACE-EXEC] applied place tilt +45.0deg about waist Y -> quat=['0.2294', '0.3262', '-0.6764', '-0.6193']
+[PLACE-EXEC] place TCP target (waist) from handoff grasp_pose7 (original detected grasp position): x=0.4594 y=-0.0617 z=0.2284 (+5cm release clearance)
+[PLACE-EXEC] approach along place axis: dist=0.120m extra_z=0.120m tool_z=[-0.714,-0.157,0.682] approach_xyz=['0.3736', '-0.0805', '0.4303']
+[INFO] [1783488805.778788313] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+[PLACE-EXEC] arms enabled (mode 3); placing with 'right' arm
+[PLACE-EXEC] gripper: connecting in background (overlaps approach)
+[GRASP-EXEC] gripper: arm='right' -> stable by-id port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D30JLK40-if00-port0
+[INFO] [1783488805.799375136] [XARM_manager]: Deactivated controllers: []
+[PLACE-EXEC] START HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.200', '-0.683']
+[INFO] [1783488805.828701200] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[INFO] [1783488805.854226390] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.2, -0.683])
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] gripper: cached serial port /dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D30JLK40-if00-port0 -> /tmp/robotiq_gripper_port.txt
+[GRASP-EXEC] gripper controller ready: backend=modbus_rtu port=auto slave=9 (wait_timeout=8.0s) [connect took 0.06s]
+[INFO] [1783488806.586690959] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783488807.152721107] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1783488807.153173594] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] START HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[INFO] [1783488807.165590723] [XARM_manager]: Deactivated controllers: ['jointspace_arm_R_controller']
+[WARN] [1783488807.799555544] [XARM_manager]: TF查找超时: waist_yaw_link <- right_tcp_link, 超时0.5s
+[PLACE-EXEC] TF warmup ok: read TCP after 2 attempt(s)
+[PLACE-EXEC] ARM: approach to middle waypoint
+[INFO] [1783488807.817772074] [XARM_manager]: Activated controllers: ['endpose_single_arm_qp_R_controller']
+[GRASP-EXEC] QP-Stream right -> approach (pure-pursuit): pos=42.4cm rot=74.6deg, lookahead=13cm @ 50Hz, pos_tol=2.0cm accept=2.5cm keep_ori=False
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+[GRASP-EXEC] QP-Stream approach: finished by deadline, 3.5cm from target
+[GRASP-EXEC] QP-Stream approach: WARNING target not reached within 2.5cm (final 3.5cm)
+[GRASP-EXEC] approach TCP tracking: commanded=[0.3736,-0.0805,0.4303] achieved=[0.4079,-0.0874,0.4326] err=[+34.2,-6.9,+2.4]mm |err|=35.0mm approach-axis tilt: achieved=+38.1deg commanded=+43.0deg (0=level) ori-err=6.4deg
+[PLACE-EXEC] approach failed; skipping place insert
+[INFO] [1783488827.986044765] [XARM_manager]: Deactivated controllers: ['endpose_single_arm_qp_R_controller']
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+收到警告信息: source=SingleArmQpController_right_arm, code=300266, info=关节最大限位
+[PLACE-EXEC] RETURN HOME: right -> joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.200', '-0.683']
+[INFO] [1783488828.004936976] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[INFO] [1783488828.005888426] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.2, -0.683])
+[INFO] [1783488828.007461243] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783488830.441658847] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1783488830.442182135] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[PLACE-EXEC] RETURN HOME result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+{
+  "arm": "right",
+  "motion_strategy": "qp_all",
+  "dry_run": false,
+  "motion": {
+    "place_pose7": [
+      0.45935660045047777,
+      -0.06168674071781658,
+      0.22844648051503608,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_pose7": [
+      0.3736316891294537,
+      -0.0805458070193528,
+      0.43027297498496203,
+      0.22941393277711944,
+      0.3262292453010775,
+      -0.6763556988345837,
+      -0.6192630261948527
+    ],
+    "approach_tcp_tracking": {
+      "commanded_xyz": [
+        0.3736316891294537,
+        -0.0805458070193528,
+        0.43027297498496203
+      ],
+      "achieved_xyz": [
+        0.40787521751118205,
+        -0.087417269141044,
+        0.4326441459150644
+      ],
+      "error_mm": [
+        34.24352838172834,
+        -6.8714621216912075,
+        2.371170930102362
+      ],
+      "error_norm_mm": 35.0065519481687,
+      "achieved_quat": [
+        -0.24792993828629156,
+        -0.3604208481821935,
+        0.6862989951121313,
+        0.5810518455396755
+      ],
+      "approach_axis_tilt_deg": 38.11596438877567,
+      "commanded_approach_axis_tilt_deg": 42.99131199460442,
+      "orientation_error_deg": 6.3509551312360415
+    },
+    "approach_ok": false,
+    "place_ok": false,
+    "released_ok": null,
+    "lift_ok": null,
+    "retract_ok": null,
+    "return_home_ok": true
+  },
+  "ok": false
+}
+[PLACE-EXEC] saved result json: /tmp/place_exec.json

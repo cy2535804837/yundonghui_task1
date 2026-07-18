@@ -1,0 +1,45 @@
+[mcp] launched at 2026-07-08T16:01:25
+[mcp] cmd: /usr/bin/python3 -u -m compliant_grasp_execute.main --arm auto --handoff-out /tmp/grasp_handoff.json --json-out /home/ubuntu/niu/logs/mcp/compliant_grasp_execute/20260708T160125.result.json --config /tmp/compliant_grasp_cfg_c8_o4pmu.yaml
+[mcp] cwd: /home/ubuntu/niu
+[mcp] ----- begin subprocess output -----
+[CONFIG] loaded 201 params from /tmp/compliant_grasp_cfg_c8_o4pmu.yaml
+[INFO] [1783497686.010008238] [XARM_manager]: waiting for service /controller_manager/get_parameters to become available...
+[INFO] [1783497686.279446653] [XARM_manager]: XARM_manager initialized, robot_type: tianyi2, run_type: real
+[INFO] [1783497686.287131527] [XARM_manager]: 已订阅关节状态话题: /joint_states
+[INFO] [1783497686.292190048] [XARM_manager]: 已订阅警告和错误信息话题: /manipulator/warn_and_error_info
+[INFO] [1783497686.305215216] [XARM_manager]: /joint_action_report 服务已启动
+[GRASP-EXEC] STARTUP: enabling arms and moving BOTH to home posture
+[INFO] [1783497691.432340349] [XARM_manager]: Deactivated controllers: ['jointspace_arm_L_controller', 'jointspace_arm_R_controller']
+[GRASP-EXEC] STARTUP: left -> home joints=['0.844', '0.026', '-0.006', '-2.216', '-1.529', '0.250', '0.683']
+[INFO] [1783497691.940727732] [XARM_manager]: Activated controllers: ['jointspace_arm_L_controller']
+[INFO] [1783497691.958035585] [XARM_manager]: Sending goal to action server /jointspace_arm_L_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, 0.026, -0.006, -2.216, -1.529, 0.25, 0.683])
+[INFO] [1783497691.960565542] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783497692.419072450] [XARM_manager]: Action result received from /jointspace_arm_L_controller/jointspace
+[INFO] [1783497692.419623191] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[GRASP-EXEC] STARTUP: right -> home joints=['0.844', '-0.026', '0.006', '-2.216', '1.529', '0.250', '-0.683']
+[INFO] [1783497692.433442064] [XARM_manager]: Activated controllers: ['jointspace_arm_R_controller']
+[INFO] [1783497692.449809162] [XARM_manager]: Sending goal to action server /jointspace_arm_R_controller/jointspace (attempt 1/3):
+eai_manipulator_msgs.action.JointSpace_Goal(target_positions=[0.844, -0.026, 0.006, -2.216, 1.529, 0.25, -0.683])
+[INFO] [1783497692.451411061] [XARM_manager]: Goal accepted. Waiting for result...
+[INFO] [1783497692.906966056] [XARM_manager]: Action result received from /jointspace_arm_R_controller/jointspace
+[INFO] [1783497692.907418638] [XARM_manager]: Action result: eai_manipulator_msgs.action.JointSpace_Result(success=True, result_msg='action finished')
+[GRASP-EXEC] STARTUP: activating both grippers (open/close cycle)
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] STARTUP: gripper 'left' activated
+[robotiq_api] gripper already activated (gSTA==3); skip resetActivate()
+[GRASP-EXEC] STARTUP: gripper 'right' activated
+perception health check pass
+[object_pose] RGB (720, 1280, 3), depth (720, 1280), valid-depth pixels: 863436/921600 (median valid depth 1.492 m)
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/ubuntu/niu/compliant_grasp_execute/main.py", line 5193, in <module>
+    raise SystemExit(main())
+  File "/home/ubuntu/niu/compliant_grasp_execute/main.py", line 3788, in main
+    det = _detect_pose(args, xarm)
+  File "/home/ubuntu/niu/compliant_grasp_execute/main.py", line 3225, in _detect_pose
+    raise RuntimeError("Detection failed: get_object_pose_in_waist_yaw_link returned None")
+RuntimeError: Detection failed: get_object_pose_in_waist_yaw_link returned None
